@@ -1,4 +1,4 @@
-# git pull, push for gitlab
+<<<<<<< HEAD# git pull, push for gitlab
 git pull gitlabOrigin master --allow-unrelated-histories
 git push -u gitlabOrigin master 
 
@@ -72,3 +72,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `yarn build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+=======
+# offsiede
+football info application
+>>>>>>> e8da76ada19e4ef83758bd9ae1e33c8803035760
