@@ -1,4 +1,4 @@
-<<<<<<< HEAD# git pull, push for gitlab
+# Git commands
 git pull gitlabOrigin master --allow-unrelated-histories
 git push -u gitlabOrigin master 
 
