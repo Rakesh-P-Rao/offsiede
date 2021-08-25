@@ -76,3 +76,8 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 # offsiede
 football info application
 >>>>>>> e8da76ada19e4ef83758bd9ae1e33c8803035760
+=======
+# offsiede
+
+football info application
+>>>>>>> c04255f4e4a04daf3c6371e2ee09cd8f0be0f409
