@@ -1,3 +1,7 @@
+# git pull, push for gitlab
+git pull gitlabOrigin master --allow-unrelated-histories
+git push -u gitlabOrigin master 
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
