@@ -48,6 +48,23 @@ class HomePage extends Component {
                 All Fixtures
               </Link>
             </div>
+            <div className="btn btn-info p-3 m-5 text-dark">
+              <Link
+                className="text-dark fs-4 fw-bold"
+                to={PAGE_URLS.GET_ALL_IN_PLAY}
+              >
+                All In Play
+              </Link>
+            </div>
+
+            <div className="btn btn-info p-3 m-5 text-dark">
+              <Link
+                className="text-dark fs-4 fw-bold"
+                to={PAGE_URLS.GET_ALL_UPCOMING}
+              >
+                All Upcoming
+              </Link>
+            </div>
           </div>
         );
     }
