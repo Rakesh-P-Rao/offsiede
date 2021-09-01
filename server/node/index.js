@@ -12,6 +12,8 @@ app.use(
   AllFiles.allSeasons.getAllSeasons,
   AllFiles.allFixtures.getAllFixtures,
   AllFiles.allFixtures.getAllUpcoming,
+  AllFiles.allCountries.getCountryByCountryId,
+  AllFiles.allCountries.getLeaguesByCountryId,
   // AllFiles.venueByCountry.getVenuesByCountry,
   // AllFiles.teamByLeague.getTeamsByLeague,
 );

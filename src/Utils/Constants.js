@@ -5,9 +5,8 @@ export const SERVER_ACTIONS = {
   GET_ALL_FIXTURES: "/get-all-fixtures",
   GET_ALL_IN_PLAY: "/get-all-in-play",
   GET_ALL_UPCOMING: "/get-all-upcoming",
-  // GET_VENUE_BY_COUNTRY: "/venue-by-country",
-  // GET_TEAM_BY_LEAGUE_ID: "/get-team-by-league",
-  // GET_SEARCHED_PLACE_WEATHER: "/searched-word-weather/:searchedParams",
+  GET_COUNTRY_BY_COUNTRY_ID: "/get-country-by-country-id",
+  GET_LEAGUES_BY_COUNTRY_ID: "/get-leagues-by-country-id",
 };
 
 export const PAGE_URLS = {
@@ -18,5 +17,8 @@ export const PAGE_URLS = {
   GET_ALL_FIXTURES: "/get-all-fixtures",
   GET_ALL_IN_PLAY: "/get-all-in-play",
   GET_ALL_UPCOMING: "/get-all-upcoming",
+  GET_COUNTRY_BY: "/get-country-by-/:by",
+  GET_COUNTRY_BY_COUNTRY_ID: "/get-country-by/:id",
+  GET_LEAGUES_BY_COUNTRY_ID: "/get-leagues-by-country-id/:id",
   PAGE_NOT_FOUND: "**",
 };

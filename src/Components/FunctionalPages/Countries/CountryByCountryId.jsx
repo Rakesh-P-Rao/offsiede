@@ -1,24 +1,25 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { PAGE_URLS } from "../../../Utils/Constants";
-import { getAllCountriesList } from "../FunctionalApiActions/Countries/faaCountries";
+import { getCountryByCountryId } from "../FunctionalApiActions/Countries/faaCountries";
 
-class AllCountries extends Component {
+class CountryByCountryId extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      allCountryList: [],
+      countryByIdList: [],
+      countryId: this.props.match.params,
     };
   }
 
   componentDidMount() {
-    this.getAllListOfCountries();
+    this.getCountryInfoById();
   }
 
-  getAllListOfCountries = () => {
-    getAllCountriesList().then((response) => {
+  getCountryInfoById = (id) => {
+    getCountryByCountryId(this.state.countryId.id).then((response) => {
       this.setState({
-        allCountryList: response,
+        countryByIdList: response,
       });
     });
   };
@@ -26,9 +27,9 @@ class AllCountries extends Component {
   render() {
     return (
       <div className="container">
-        <h1 className="card-footer">All Countries</h1>
+        <h1 className="card-footer">Country Info</h1>
         <div className="row">
-          {this.state.allCountryList.map((cList) => (
+          {this.state.countryByIdList.map((cList) => (
             <>
               <div className="col-3">
                 <div className="card h-90 my-3">
@@ -56,17 +57,6 @@ class AllCountries extends Component {
                       Home
                     </Link>
                   </div>
-                  <div class="card-body">
-                    <Link
-                      className="text-dark fs-4 fw-bold"
-                      to={PAGE_URLS.GET_COUNTRY_BY.replace(
-                        ":by",
-                        cList.id
-                      )}
-                    >
-                      Get info by id: {cList.id}
-                    </Link>
-                  </div>
                 </div>
               </div>
             </>
@@ -77,4 +67,4 @@ class AllCountries extends Component {
   }
 }
 
-export default AllCountries;
+export default CountryByCountryId;

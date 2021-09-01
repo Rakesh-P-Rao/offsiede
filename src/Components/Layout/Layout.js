@@ -11,6 +11,9 @@ import AllSeasons from "../FunctionalPages/Seasons/AllSeasons";
 import AllFixtures from "../FunctionalPages/Fixtures/AllFixtures";
 import AllInPlay from "../FunctionalPages/Fixtures/AllInPlay";
 import AllUpcoming from "../FunctionalPages/Fixtures/AllUpcoming";
+import CountryBy from "../FunctionalPages/Countries/CountryBy";
+import CountryByCountryId from "../FunctionalPages/Countries/CountryByCountryId";
+import LeaguesByCountryId from "../FunctionalPages/Leagues/LeaguesByCountryId";
 
 class Layout extends Component {
   constructor(props) {
@@ -56,6 +59,21 @@ class Layout extends Component {
               path={PAGE_URLS.GET_ALL_UPCOMING}
               exact
               component={AllUpcoming}
+            />
+            <Route
+              path={PAGE_URLS.GET_COUNTRY_BY}
+              exact
+              component={CountryBy}
+            />
+            <Route
+              path={PAGE_URLS.GET_COUNTRY_BY_COUNTRY_ID}
+              exact
+              component={CountryByCountryId}
+            />
+            <Route
+              path={PAGE_URLS.GET_LEAGUES_BY_COUNTRY_ID}
+              exact
+              component={LeaguesByCountryId}
             />
             <Route
               path={PAGE_URLS.PAGE_NOT_FOUND}

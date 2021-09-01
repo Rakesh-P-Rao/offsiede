@@ -18,7 +18,7 @@ class Prototype extends Component {
   getAllListOfCountries = () => {
     getAllCountriesList().then((response) => {
       this.setState({
-        allCountryList: response,
+        prototypeList: response,
       });
     });
   };
@@ -28,19 +28,16 @@ class Prototype extends Component {
       <div className="container">
         <h1 className="card-footer">All Prototypes</h1>
         <div className="row">
-          {this.state.allCountryList.map((cList) => (
+          {this.state.prototypeList.map((cList) => (
             <>
               <div className="col-3">
-                <div
-                  className="card h-90 my-3"
-                >
+                <div className="card h-90 my-3">
                   <img
                     src={cList.flag}
                     className="card-img-top"
                     alt="player dp"
                   />
-                  <div class="card-body">
-                  </div>
+                  <div class="card-body"></div>
                   <ul class="list-group list-group-flush">
                     <li class="list-group-item">item</li>
                   </ul>

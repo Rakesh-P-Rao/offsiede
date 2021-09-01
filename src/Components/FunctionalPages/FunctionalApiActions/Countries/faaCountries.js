@@ -13,3 +13,32 @@ export function getAllCountriesList() {
       }
     );
 }
+
+export function getCountryByCountryId(id) {
+  return new HttpRequest(`${SERVER_ACTIONS.GET_COUNTRY_BY_COUNTRY_ID}/${id}`, "GET")
+    .requestWithAuthentication()
+    .then(
+      (response) => {
+        return Promise.resolve(response.data);
+      },
+      (error) => {
+        return Promise.reject(error);
+      }
+    );
+}
+
+export function getLeaguesByCountryId(id) {
+  return new HttpRequest(
+    `${SERVER_ACTIONS.GET_LEAGUES_BY_COUNTRY_ID}/${id}`,
+    "GET"
+  )
+    .requestWithAuthentication()
+    .then(
+      (response) => {
+        return Promise.resolve(response.data);
+      },
+      (error) => {
+        return Promise.reject(error);
+      }
+    );
+}

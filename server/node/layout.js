@@ -4,6 +4,8 @@ const AllFiles = {
   allSeasons: require("./codes/Seasons/season"),
   allFixtures: require("./codes/Fixtures/fixture"),
   allUpcoming: require("./codes/Fixtures/fixture"),
+  getCountryByCountryId: require("./codes/Countries/country"),
+  getLeaguesByCountryId: require("./codes/Countries/country"),
   // venueByCountry: require("./codes/Venues/venue"),
   // teamByLeague: require("./codes/Teams/team"),
   // searchedWordWeather: require("./codes/Weather/weather"),
