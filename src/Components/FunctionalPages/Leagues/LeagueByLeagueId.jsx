@@ -1,24 +1,25 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import { PAGE_URLS } from '../../../Utils/Constants';
-import { getAllLeaguesList } from '../FunctionalApiActions/Leagues/faaLeagues';
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
+import { PAGE_URLS } from "../../../Utils/Constants";
+import { getLeagueByLeagueId } from "../FunctionalApiActions/Leagues/faaLeagues";
 
-class AllLeagues extends Component {
+class LeagueByLeagueId extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      allLeaguesList: [],
+      leaguesListByLeagueId: [],
+      leagueId: this.props.match.params,
     };
   }
 
   componentDidMount() {
-    this.getAllListOfLeagues();
+    this.getLeaguesInfoByLeagueId();
   }
 
-  getAllListOfLeagues = () => {
-    getAllLeaguesList().then((response) => {
+  getLeaguesInfoByLeagueId = (id) => {
+    getLeagueByLeagueId(this.state.leagueId.id).then((response) => {
       this.setState({
-        allLeaguesList: response,
+        leaguesListByLeagueId: response,
       });
     });
   };
@@ -26,40 +27,31 @@ class AllLeagues extends Component {
   render() {
     return (
       <div className="container">
-        <h1 className="card-footer">All Leagues</h1>
+        <h1 className="card-footer">League Info</h1>
         <div className="row">
-          {this.state.allLeaguesList.map((lList) => (
+          {this.state.leaguesListByLeagueId.map((lList) => (
             <>
               <div className="col-3">
                 <div className="card h-90 my-3">
-                  <img src={"n/a"} className="card-img-top" alt="player dp" />
-                  <div class="card-body"></div>
                   <ul class="list-group list-group-flush">
                     <li class="list-group-item">{lList.id}</li>
                     <li class="list-group-item">{lList.idCountry}</li>
                     <li class="list-group-item">{lList.countryName}</li>
                     <li class="list-group-item">{lList.name}</li>
                     <li class="list-group-item">
-                      {lList.nationalLeague} nationalLeague boolean value{" "}
+                      {lList.nationalLeague} nationalLeague boolean value
                     </li>
                     <li class="list-group-item">
                       {lList.clubsLeague} clubsLeague boolean value
                     </li>
+                    <li class="list-group-item fw-bold">{lList.name}</li>
                   </ul>
                   <div class="card-body">
                     <Link
                       className="text-dark fs-4 fw-bold"
                       to={PAGE_URLS.HOME}
                     >
-                      Link
-                    </Link>
-                  </div>
-                  <div class="card-body">
-                    <Link
-                      className="text-dark fs-4 fw-bold"
-                      to={PAGE_URLS.GET_LEAGUE_BY.replace(":by", lList.id)}
-                    >
-                      Get info by id: {lList.id}
+                      Home
                     </Link>
                   </div>
                 </div>
@@ -71,5 +63,5 @@ class AllLeagues extends Component {
     );
   }
 }
- 
-export default AllLeagues;
+
+export default LeagueByLeagueId;

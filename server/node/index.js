@@ -14,8 +14,7 @@ app.use(
   AllFiles.allFixtures.getAllUpcoming,
   AllFiles.allCountries.getCountryByCountryId,
   AllFiles.allCountries.getLeaguesByCountryId,
-  // AllFiles.venueByCountry.getVenuesByCountry,
-  // AllFiles.teamByLeague.getTeamsByLeague,
+  AllFiles.allLeagues.getLeagueByLeagueId,
 );
 
 require("dotenv").config();

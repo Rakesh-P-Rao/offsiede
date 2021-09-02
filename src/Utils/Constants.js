@@ -7,6 +7,7 @@ export const SERVER_ACTIONS = {
   GET_ALL_UPCOMING: "/get-all-upcoming",
   GET_COUNTRY_BY_COUNTRY_ID: "/get-country-by-country-id",
   GET_LEAGUES_BY_COUNTRY_ID: "/get-leagues-by-country-id",
+  GET_LEAGUE_BY_LEAGUE_ID: "/get-league-by-league-id",
 };
 
 export const PAGE_URLS = {
@@ -20,5 +21,7 @@ export const PAGE_URLS = {
   GET_COUNTRY_BY: "/get-country-by-/:by",
   GET_COUNTRY_BY_COUNTRY_ID: "/get-country-by/:id",
   GET_LEAGUES_BY_COUNTRY_ID: "/get-leagues-by-country-id/:id",
+  GET_LEAGUE_BY: "/get-league-by-/:by",
+  GET_LEAGUE_BY_LEAGUE_ID: "/get-league-by-league-id/:id",
   PAGE_NOT_FOUND: "**",
 };

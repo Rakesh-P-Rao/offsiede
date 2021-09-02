@@ -14,6 +14,8 @@ import AllUpcoming from "../FunctionalPages/Fixtures/AllUpcoming";
 import CountryBy from "../FunctionalPages/Countries/CountryBy";
 import CountryByCountryId from "../FunctionalPages/Countries/CountryByCountryId";
 import LeaguesByCountryId from "../FunctionalPages/Leagues/LeaguesByCountryId";
+import LeagueByLeagueId from "../FunctionalPages/Leagues/LeagueByLeagueId";
+import LeagueBy from "../FunctionalPages/Leagues/LeagueBy";
 
 class Layout extends Component {
   constructor(props) {
@@ -74,6 +76,16 @@ class Layout extends Component {
               path={PAGE_URLS.GET_LEAGUES_BY_COUNTRY_ID}
               exact
               component={LeaguesByCountryId}
+            />
+            <Route
+              path={PAGE_URLS.GET_LEAGUE_BY}
+              exact
+              component={LeagueBy}
+            />
+            <Route
+              path={PAGE_URLS.GET_LEAGUE_BY_LEAGUE_ID}
+              exact
+              component={LeagueByLeagueId}
             />
             <Route
               path={PAGE_URLS.PAGE_NOT_FOUND}
