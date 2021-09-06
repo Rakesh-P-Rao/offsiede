@@ -16,6 +16,17 @@ import CountryByCountryId from "../FunctionalPages/Countries/CountryByCountryId"
 import LeaguesByCountryId from "../FunctionalPages/Leagues/LeaguesByCountryId";
 import LeagueByLeagueId from "../FunctionalPages/Leagues/LeagueByLeagueId";
 import LeagueBy from "../FunctionalPages/Leagues/LeagueBy";
+import SeasonBy from "../FunctionalPages/Seasons/SeasonBy";
+import SeasonBySeasonId from "../FunctionalPages/Seasons/SeasonBySeasonId";
+import SeasonByLeagueId from "../FunctionalPages/Seasons/SeasonByLeagueId";
+import StageBySeasonId from "../FunctionalPages/Stages/StageBySeasonId";
+import TopOwnGoals from "../FunctionalPages/PlayerStatsBySeasonId/TopOwnGoals";
+import TopApperances from "../FunctionalPages/PlayerStatsBySeasonId/TopAppearances";
+import TopSubbedOff from "../FunctionalPages/PlayerStatsBySeasonId/TopSubbedOff";
+import TopSubbedOn from "../FunctionalPages/PlayerStatsBySeasonId/TopSubbedOn";
+import TopRedCards from "../FunctionalPages/PlayerStatsBySeasonId/TopRedCards";
+import TopYellowCards from "../FunctionalPages/PlayerStatsBySeasonId/TopYellowCards";
+import TopScorers from "../FunctionalPages/PlayerStatsBySeasonId/TopScorers";
 
 class Layout extends Component {
   constructor(props) {
@@ -77,15 +88,62 @@ class Layout extends Component {
               exact
               component={LeaguesByCountryId}
             />
-            <Route
-              path={PAGE_URLS.GET_LEAGUE_BY}
-              exact
-              component={LeagueBy}
-            />
+            <Route path={PAGE_URLS.GET_LEAGUE_BY} exact component={LeagueBy} />
             <Route
               path={PAGE_URLS.GET_LEAGUE_BY_LEAGUE_ID}
               exact
               component={LeagueByLeagueId}
+            />
+            <Route
+              path={PAGE_URLS.GET_SEASON_BY_LEAGUE_ID}
+              exact
+              component={SeasonByLeagueId}
+            />
+            <Route path={PAGE_URLS.GET_SEASON_BY} exact component={SeasonBy} />
+            <Route
+              path={PAGE_URLS.GET_SEASON_BY_SEASON_ID}
+              exact
+              component={SeasonBySeasonId}
+            />
+            <Route
+              path={PAGE_URLS.GET_STAGE_BY_SEASON_ID}
+              exact
+              component={StageBySeasonId}
+            />
+            <Route
+              path={PAGE_URLS.GET_TOP_SCORERS_BY_SEASON_ID}
+              exact
+              component={TopScorers}
+            />
+            <Route
+              path={PAGE_URLS.GET_TOP_YELLOW_CARDS_BY_SEASON_ID}
+              exact
+              component={TopYellowCards}
+            />
+            <Route
+              path={PAGE_URLS.GET_TOP_RED_CARDS_BY_SEASON_ID}
+              exact
+              component={TopRedCards}
+            />
+            <Route
+              path={PAGE_URLS.GET_TOP_SUBBED_ON_BY_SEASON_ID}
+              exact
+              component={TopSubbedOn}
+            />
+            <Route
+              path={PAGE_URLS.GET_TOP_SUBBED_OFF_BY_SEASON_ID}
+              exact
+              component={TopSubbedOff}
+            />
+            <Route
+              path={PAGE_URLS.GET_TOP_APPEARANCES_BY_SEASON_ID}
+              exact
+              component={TopApperances}
+            />
+            <Route
+              path={PAGE_URLS.GET_TOP_OWN_GOALS_BY_SEASON_ID}
+              exact
+              component={TopOwnGoals}
             />
             <Route
               path={PAGE_URLS.PAGE_NOT_FOUND}

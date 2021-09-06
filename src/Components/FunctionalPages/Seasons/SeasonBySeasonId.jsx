@@ -1,24 +1,25 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { PAGE_URLS } from "../../../Utils/Constants";
-import { getAllSeasonsList } from "./../FunctionalApiActions/Seasons/faaSeasons";
+import { getSeasonBySeasonId } from "../FunctionalApiActions/Seasons/faaSeasons";
 
-class AllSeasons extends Component {
+class SeasonBySeasonId extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      allSeasonList: [],
+      seasonListBySeasonId: [],
+      seasonId: this.props.match.params,
     };
   }
 
   componentDidMount() {
-    this.getAllListOfSeasons();
+    this.getSeasonInfoBySeasonId();
   }
 
-  getAllListOfSeasons = () => {
-    getAllSeasonsList().then((response) => {
+  getSeasonInfoBySeasonId = (id) => {
+    getSeasonBySeasonId(this.state.seasonId.id).then((response) => {
       this.setState({
-        allSeasonList: response,
+        seasonListBySeasonId: response,
       });
     });
   };
@@ -26,9 +27,9 @@ class AllSeasons extends Component {
   render() {
     return (
       <div className="container">
-        <h1 className="card-footer">All Seasons</h1>
+        <h1 className="card-footer">Season Info</h1>
         <div className="row">
-          {this.state.allSeasonList.map((sList) => (
+          {this.state.seasonListBySeasonId.map((sList) => (
             <>
               <div className="col-3">
                 <div className="card h-90 my-3">
@@ -47,14 +48,6 @@ class AllSeasons extends Component {
                       Home
                     </Link>
                   </div>
-                  <div class="card-body">
-                    <Link
-                      className="text-dark fs-4 fw-bold"
-                      to={PAGE_URLS.GET_SEASON_BY.replace(":by", sList.id)}
-                    >
-                      Get info by id: {sList.id}
-                    </Link>
-                  </div>
                 </div>
               </div>
             </>
@@ -65,4 +58,4 @@ class AllSeasons extends Component {
   }
 }
 
-export default AllSeasons;
+export default SeasonBySeasonId;

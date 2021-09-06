@@ -32,12 +32,6 @@ class AllFixtures extends Component {
             <>
               <div className="col-3">
                 <div className="card h-90 my-3">
-                  <img
-                    src={fList.flag}
-                    className="card-img-top"
-                    alt="player dp"
-                  />
-                  <div class="card-body"></div>
                   <ul class="list-group list-group-flush">
                     <li class="list-group-item">{fList.id}</li>
                     <li class="list-group-item">{fList.idCountry}</li>

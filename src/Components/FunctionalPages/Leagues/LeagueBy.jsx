@@ -29,6 +29,17 @@ class LeagueBy extends Component {
             Get league info by league id
           </Link>
         </div>
+        <div class="btn btn-info p-3 m-5 text-dark">
+          <Link
+            className="text-dark fs-4 fw-bold"
+            to={PAGE_URLS.GET_SEASON_BY_LEAGUE_ID.replace(
+              ":id",
+              this.state.league.by
+            )}
+          >
+            Get season info by league id
+          </Link>
+        </div>
       </div>
     );
   }

@@ -8,6 +8,16 @@ export const SERVER_ACTIONS = {
   GET_COUNTRY_BY_COUNTRY_ID: "/get-country-by-country-id",
   GET_LEAGUES_BY_COUNTRY_ID: "/get-leagues-by-country-id",
   GET_LEAGUE_BY_LEAGUE_ID: "/get-league-by-league-id",
+  GET_SEASON_BY_LEAGUE_ID: "/get-season-by-league-id",
+  GET_SEASON_BY_SEASON_ID: "/get-season-by-season-id",
+  GET_STAGE_BY_SEASON_ID: "/get-stage-by-season-id",
+  GET_TOP_SCORERS_BY_SEASON_ID: "/get-top-scorers-by-season-id",
+  GET_TOP_YELLOW_CARDS_BY_SEASON_ID: "/get-top-yellow-cards-by-season-id",
+  GET_TOP_RED_CARDS_BY_SEASON_ID: "/get-top-red-cards-by-season-id",
+  GET_TOP_SUBBED_ON_BY_SEASON_ID: "/get-top-subbed-on-by-season-id",
+  GET_TOP_SUBBED_OFF_BY_SEASON_ID: "/get-top-subbed-off-by-season-id",
+  GET_TOP_APPEARANCES_BY_SEASON_ID: "/get-top-apperances-by-season-id",
+  GET_TOP_OWN_GOALS_BY_SEASON_ID: "/get-top-own-goals-by-season-id",
 };
 
 export const PAGE_URLS = {
@@ -23,5 +33,16 @@ export const PAGE_URLS = {
   GET_LEAGUES_BY_COUNTRY_ID: "/get-leagues-by-country-id/:id",
   GET_LEAGUE_BY: "/get-league-by-/:by",
   GET_LEAGUE_BY_LEAGUE_ID: "/get-league-by-league-id/:id",
+  GET_SEASON_BY_LEAGUE_ID: "/get-season-by-league-id/:id",
+  GET_SEASON_BY: "/get-season-by-/:by",
+  GET_SEASON_BY_SEASON_ID: "/get-season-by-season-id/:id",
+  GET_STAGE_BY_SEASON_ID: "/get-stage-by-season-id/:id",
+  GET_TOP_SCORERS_BY_SEASON_ID: "/get-top-scorers-by-season-id/:id",
+  GET_TOP_YELLOW_CARDS_BY_SEASON_ID: "/get-top-yellow-cards-by-season-id/:id",
+  GET_TOP_RED_CARDS_BY_SEASON_ID: "/get-top-red-cards-by-season-id/:id",
+  GET_TOP_SUBBED_ON_BY_SEASON_ID: "/get-top-subbed-on-by-season-id/:id",
+  GET_TOP_SUBBED_OFF_BY_SEASON_ID: "/get-top-subbed-off-by-season-id/:id",
+  GET_TOP_APPEARANCES_BY_SEASON_ID: "/get-top-apperances-by-season-id/:id",
+  GET_TOP_OWN_GOALS_BY_SEASON_ID: "/get-top-own-goals-by-season-id/:id",
   PAGE_NOT_FOUND: "**",
 };

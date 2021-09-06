@@ -29,3 +29,19 @@ export function getLeagueByLeagueId(id) {
       }
     );
 }
+
+export function getSeasonByLeagueId(id) {
+  return new HttpRequest(
+    `${SERVER_ACTIONS.GET_SEASON_BY_LEAGUE_ID}/${id}`,
+    "GET"
+  )
+    .requestWithAuthentication()
+    .then(
+      (response) => {
+        return Promise.resolve(response.data);
+      },
+      (error) => {
+        return Promise.reject(error);
+      }
+    );
+}

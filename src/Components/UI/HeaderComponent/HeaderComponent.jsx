@@ -11,7 +11,7 @@ class HeaderComponent extends Component {
   
   render() {
     return (
-      <nav className="navbar navbar-expand-lg bg-dark text-light">
+      <nav className="navbar navbar-expand-lg bg-dark text-light fixed-top">
         <div className="container-fluid fs-5">
           <Link className="navbar-brand text-light" to={PAGE_URLS.HOME}>
             <img

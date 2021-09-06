@@ -30,6 +30,247 @@ const seasons = {
         console.error(error);
       });
   }),
+  getSeasonBySeasonId: app.get("/get-season-by-season-id/:id", (req, res) => {
+    const id = req.params.id;
+    var options = {
+      method: "GET",
+      url: `https://football.elenasport.io/v2/seasons/${id}`,
+      qs: {
+        expand: "***expand***",
+      },
+      headers: {
+        Authorization: AUTHORIZATION,
+      },
+    };
+
+    axios
+      .request(options)
+      .then(function (response) {
+        console.log(response.data);
+        res.send(response.data.data);
+      })
+      .catch(function (error) {
+        console.error(error);
+      });
+  }),
+  getStageBySeasonId: app.get("/get-stage-by-season-id/:id", (req, res) => {
+    const id = req.params.id;
+    var options = {
+      method: "GET",
+      url: `https://football.elenasport.io/v2/seasons/${id}/stages`,
+      qs: {
+        expand: "***expand***",
+      },
+      headers: {
+        Authorization: AUTHORIZATION,
+      },
+    };
+
+    axios
+      .request(options)
+      .then(function (response) {
+        console.log(response.data);
+        res.send(response.data.data);
+      })
+      .catch(function (error) {
+        console.error(error);
+      });
+  }),
+  getTopScorersBySeasonId: app.get(
+    "/get-top-scorers-by-season-id/:id",
+    (req, res) => {
+      const id = req.params.id;
+      var options = {
+        method: "GET",
+        url: `https://football.elenasport.io/v2/seasons/${id}/topscorers`,
+        qs: {
+          expand: "***expand***",
+          page: "***page***",
+        },
+        headers: {
+          Authorization: AUTHORIZATION,
+        },
+      };
+
+      axios
+        .request(options)
+        .then(function (response) {
+          console.log(response.data);
+          res.send(response.data.data);
+        })
+        .catch(function (error) {
+          console.error(error);
+        });
+    }
+  ),
+
+  getTopYellowCardsBySeasonId: app.get(
+    "/get-top-yellow-cards-by-season-id/:id",
+    (req, res) => {
+      const id = req.params.id;
+      var options = {
+        method: "GET",
+        url: `https://football.elenasport.io/v2/seasons/${id}/topyellowcards`,
+        qs: {
+          expand: "***expand***",
+          page: "***page***",
+        },
+        headers: {
+          Authorization: AUTHORIZATION,
+        },
+      };
+
+      axios
+        .request(options)
+        .then(function (response) {
+          console.log(response.data);
+          res.send(response.data.data);
+        })
+        .catch(function (error) {
+          console.error(error);
+        });
+    }
+  ),
+
+  getTopRedCardsBySeasonId: app.get(
+    "/get-top-red-cards-by-season-id/:id",
+    (req, res) => {
+      const id = req.params.id;
+      var options = {
+        method: "GET",
+        url: `https://football.elenasport.io/v2/seasons/${id}/topredcards`,
+        qs: {
+          expand: "***expand***",
+          page: "***page***",
+        },
+        headers: {
+          Authorization: AUTHORIZATION,
+        },
+      };
+
+      axios
+        .request(options)
+        .then(function (response) {
+          console.log(response.data);
+          res.send(response.data.data);
+        })
+        .catch(function (error) {
+          console.error(error);
+        });
+    }
+  ),
+
+  getTopSubbedOnBySeasonId: app.get(
+    "/get-top-subbed-on-by-season-id/:id",
+    (req, res) => {
+      const id = req.params.id;
+      var options = {
+        method: "GET",
+        url: `https://football.elenasport.io/v2/seasons/${id}/topsubbedon`,
+        qs: {
+          expand: "***expand***",
+          page: "***page***",
+        },
+        headers: {
+          Authorization: AUTHORIZATION,
+        },
+      };
+
+      axios
+        .request(options)
+        .then(function (response) {
+          console.log(response.data);
+          res.send(response.data.data);
+        })
+        .catch(function (error) {
+          console.error(error);
+        });
+    }
+  ),
+
+  getTopSubbedOffBySeasonId: app.get(
+    "/get-top-subbed-off-by-season-id/:id",
+    (req, res) => {
+      const id = req.params.id;
+      var options = {
+        method: "GET",
+        url: `https://football.elenasport.io/v2/seasons/${id}/topsubbedoff`,
+        qs: {
+          expand: "***expand***",
+          page: "***page***",
+        },
+        headers: {
+          Authorization: AUTHORIZATION,
+        },
+      };
+
+      axios
+        .request(options)
+        .then(function (response) {
+          console.log(response.data);
+          res.send(response.data.data);
+        })
+        .catch(function (error) {
+          console.error(error);
+        });
+    }
+  ),
+
+  getTopApperancesBySeasonId: app.get(
+    "/get-top-apperances-by-season-id/:id",
+    (req, res) => {
+      const id = req.params.id;
+      var options = {
+        method: "GET",
+        url: `https://football.elenasport.io/v2/seasons/${id}/topappearances`,
+        qs: {
+          expand: "***expand***",
+          page: "***page***",
+        },
+        headers: {
+          Authorization: AUTHORIZATION,
+        },
+      };
+
+      axios
+        .request(options)
+        .then(function (response) {
+          console.log(response.data);
+          res.send(response.data.data);
+        })
+        .catch(function (error) {
+          console.error(error);
+        });
+    }
+  ),
+
+  getTopOwnGoalsBySeasonId: app.get(
+    "/get-top-own-goals-by-season-id/:id",
+    (req, res) => {
+      const id = req.params.id;
+      var options = {
+        method: "GET",
+        url: `https://football.elenasport.io/v2/seasons/${id}/topowngoals`,
+        qs: {
+          expand: "***expand***",
+          page: "***page***",
+        },
+        headers: {
+          Authorization: AUTHORIZATION,
+        },
+      };
+
+      axios
+        .request(options)
+        .then(function (response) {
+          console.log(response.data);
+          res.send(response.data.data);
+        })
+        .catch(function (error) {
+          console.error(error);
+        });
+    }
+  ),
 };
 
 module.exports = seasons;

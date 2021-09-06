@@ -26,7 +26,7 @@ class AllInPlay extends Component {
   render() {
     return (
       <div className="container">
-        <h1 className="card-footer">All In PLay</h1>
+        <h1 className="card-footer">All In Play</h1>
         <div className="row">
           {this.state.allInPlayList.map((aipList) => (
             <>
