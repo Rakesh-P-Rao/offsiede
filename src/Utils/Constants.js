@@ -18,6 +18,16 @@ export const SERVER_ACTIONS = {
   GET_TOP_SUBBED_OFF_BY_SEASON_ID: "/get-top-subbed-off-by-season-id",
   GET_TOP_APPEARANCES_BY_SEASON_ID: "/get-top-apperances-by-season-id",
   GET_TOP_OWN_GOALS_BY_SEASON_ID: "/get-top-own-goals-by-season-id",
+  GET_FIXTURES_BY_SEASON_ID: "/get-fixtures-by-season-id",
+  GET_ALL_UPCOMING_BY_SEASON_ID: "/get-all-upcoming-by-season-id",
+  GET_ALL_IN_PLAY_BY_SEASON_ID: "/get-all-in-play-by-season-id",
+  GET_TEAMS_PLAYING_IN_A_SEASON_BY_SEASON_ID:
+    "/get-teams-playing-in-a-season-by-season-id",
+  GET_PLAYERS_PLAYING_IN_A_SEASON_BY_SEASON_ID:
+    "/get-players-playing-in-a-season-by-season-id",
+  GET_EVENTS_BY_FIXTURE_ID: "/get-events-by-fixture-id",
+  GET_STATS_BY_FIXTURE_ID: "/get-stats-by-fixture-id",
+  GET_LINEUPS_BY_FIXTURE_ID: "/get-lineups-by-fixture-id",
 };
 
 export const PAGE_URLS = {
@@ -44,5 +54,16 @@ export const PAGE_URLS = {
   GET_TOP_SUBBED_OFF_BY_SEASON_ID: "/get-top-subbed-off-by-season-id/:id",
   GET_TOP_APPEARANCES_BY_SEASON_ID: "/get-top-apperances-by-season-id/:id",
   GET_TOP_OWN_GOALS_BY_SEASON_ID: "/get-top-own-goals-by-season-id/:id",
+  GET_FIXTURES_BY_SEASON_ID: "/get-fixtures-by-season-id/:id",
+  GET_ALL_UPCOMING_BY_SEASON_ID: "/get-all-upcoming-by-season-id/:id",
+  GET_ALL_IN_PLAY_BY_SEASON_ID: "/get-all-in-play-by-season-id/:id",
+  GET_TEAMS_PLAYING_IN_A_SEASON_BY_SEASON_ID:
+    "/get-teams-playing-in-a-season-by-season-id/:id",
+  GET_PLAYERS_PLAYING_IN_A_SEASON_BY_SEASON_ID:
+    "/get-players-playing-in-a-season-by-season-id/:id",
+  GET_FIXTURE_BY: "/get-fixture-by-/:by",
+  GET_EVENTS_BY_FIXTURE_ID: "/get-events-by-fixture-id/:id",
+  GET_STATS_BY_FIXTURE_ID: "/get-stats-by-fixture-id/:id",
+  GET_LINEUPS_BY_FIXTURE_ID: "/get-lineups-by-fixture-id/:id",
   PAGE_NOT_FOUND: "**",
 };

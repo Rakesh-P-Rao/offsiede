@@ -163,4 +163,89 @@ export function getTopOwnGoalsBySeasonId(id) {
     );
 }
 
+export function getFixturesBySeasonId(id) {
+  return new HttpRequest(
+    `${SERVER_ACTIONS.GET_FIXTURES_BY_SEASON_ID}/${id}`,
+    "GET"
+  )
+    .requestWithAuthentication()
+    .then(
+      (response) => {
+        return Promise.resolve(response.data);
+      },
+      (error) => {
+        return Promise.reject(error);
+      }
+    );
+}
+
+
+export function getAllUpcomingBySeasonId(id) {
+  return new HttpRequest(
+    `${SERVER_ACTIONS.GET_ALL_UPCOMING_BY_SEASON_ID}/${id}`,
+    "GET"
+  )
+    .requestWithAuthentication()
+    .then(
+      (response) => {
+        return Promise.resolve(response.data);
+      },
+      (error) => {
+        return Promise.reject(error);
+      }
+    );
+}
+
+
+export function getAllInPlayBySeasonId(id) {
+  return new HttpRequest(
+    `${SERVER_ACTIONS.GET_ALL_IN_PLAY_BY_SEASON_ID}/${id}`,
+    "GET"
+  )
+    .requestWithAuthentication()
+    .then(
+      (response) => {
+        return Promise.resolve(response.data);
+      },
+      (error) => {
+        return Promise.reject(error);
+      }
+    );
+}
+
+
+export function getTeamsPlayingInASeasonBySeasonId(id) {
+  return new HttpRequest(
+    `${SERVER_ACTIONS.GET_TEAMS_PLAYING_IN_A_SEASON_BY_SEASON_ID}/${id}`,
+    "GET"
+  )
+    .requestWithAuthentication()
+    .then(
+      (response) => {
+        return Promise.resolve(response.data);
+      },
+      (error) => {
+        return Promise.reject(error);
+      }
+    );
+}
+
+
+export function getPlayersPlayingInASeasonBySeasonId(id) {
+  return new HttpRequest(
+    `${SERVER_ACTIONS.GET_PLAYERS_PLAYING_IN_A_SEASON_BY_SEASON_ID}/${id}`,
+    "GET"
+  )
+    .requestWithAuthentication()
+    .then(
+      (response) => {
+        return Promise.resolve(response.data);
+      },
+      (error) => {
+        return Promise.reject(error);
+      }
+    );
+}
+
+
 

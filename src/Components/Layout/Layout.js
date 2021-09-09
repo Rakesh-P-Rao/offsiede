@@ -27,6 +27,15 @@ import TopSubbedOn from "../FunctionalPages/PlayerStatsBySeasonId/TopSubbedOn";
 import TopRedCards from "../FunctionalPages/PlayerStatsBySeasonId/TopRedCards";
 import TopYellowCards from "../FunctionalPages/PlayerStatsBySeasonId/TopYellowCards";
 import TopScorers from "../FunctionalPages/PlayerStatsBySeasonId/TopScorers";
+import PlayersPlayingInASeasonBySeasonId from "../FunctionalPages/Players/PlayersPlayingInASeasonBySeasonId";
+import TeamsPlayingInASeasonBySeasonId from "../FunctionalPages/Team/TeamsPlayingInASeasonBySeasonId";
+import InPlayBySeasonId from "../FunctionalPages/Fixtures/InPlayBySeasonId";
+import UpcomingBySeasonId from "../FunctionalPages/Fixtures/UpcomingBySeasonId";
+import FixturesBySeasonId from "../FunctionalPages/Fixtures/FixturesBySeasonId";
+import FixtureBy from "../FunctionalPages/Fixtures/FixtureBy";
+import EventsByFixtureId from "../FunctionalPages/Fixtures/EventsByFixtureId";
+import StatsByFixtureId from "../FunctionalPages/Fixtures/StatsByFixtureId";
+import LineupsByFixtureId from "../FunctionalPages/Fixtures/LineupsByFixtureId";
 
 class Layout extends Component {
   constructor(props) {
@@ -144,6 +153,51 @@ class Layout extends Component {
               path={PAGE_URLS.GET_TOP_OWN_GOALS_BY_SEASON_ID}
               exact
               component={TopOwnGoals}
+            />
+            <Route
+              path={PAGE_URLS.GET_FIXTURES_BY_SEASON_ID}
+              exact
+              component={FixturesBySeasonId}
+            />
+            <Route
+              path={PAGE_URLS.GET_ALL_UPCOMING_BY_SEASON_ID}
+              exact
+              component={UpcomingBySeasonId}
+            />
+            <Route
+              path={PAGE_URLS.GET_ALL_IN_PLAY_BY_SEASON_ID}
+              exact
+              component={InPlayBySeasonId}
+            />
+            <Route
+              path={PAGE_URLS.GET_TEAMS_PLAYING_IN_A_SEASON_BY_SEASON_ID}
+              exact
+              component={TeamsPlayingInASeasonBySeasonId}
+            />
+            <Route
+              path={PAGE_URLS.GET_PLAYERS_PLAYING_IN_A_SEASON_BY_SEASON_ID}
+              exact
+              component={PlayersPlayingInASeasonBySeasonId}
+            />
+            <Route
+              path={PAGE_URLS.GET_FIXTURE_BY}
+              exact
+              component={FixtureBy}
+            />
+            <Route
+              path={PAGE_URLS.GET_EVENTS_BY_FIXTURE_ID}
+              exact
+              component={EventsByFixtureId}
+            />
+            <Route
+              path={PAGE_URLS.GET_STATS_BY_FIXTURE_ID}
+              exact
+              component={StatsByFixtureId}
+            />
+            <Route
+              path={PAGE_URLS.GET_LINEUPS_BY_FIXTURE_ID}
+              exact
+              component={LineupsByFixtureId}
             />
             <Route
               path={PAGE_URLS.PAGE_NOT_FOUND}

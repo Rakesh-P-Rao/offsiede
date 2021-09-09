@@ -1,24 +1,25 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { PAGE_URLS } from "../../../Utils/Constants";
-import { getAllFixturesList } from "./../FunctionalApiActions/Fixtures/faaFixtures";
+import { getFixturesBySeasonId } from "../FunctionalApiActions/Seasons/faaSeasons";
 
-class AllFixtures extends Component {
+class FixturesBySeasonId extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      allFixtureList: [],
+      fixturesListBySeasonId: [],
+      seasonId: this.props.match.params,
     };
   }
 
   componentDidMount() {
-    this.getAllListOfFixtures();
+    this.getFixturesInfoBySeasonId();
   }
 
-  getAllListOfFixtures = () => {
-    getAllFixturesList().then((response) => {
+  getFixturesInfoBySeasonId = (id) => {
+    getFixturesBySeasonId(this.state.seasonId.id).then((response) => {
       this.setState({
-        allFixtureList: response,
+        fixturesListBySeasonId: response,
       });
     });
   };
@@ -26,9 +27,9 @@ class AllFixtures extends Component {
   render() {
     return (
       <div className="container">
-        <h1 className="card-footer">All Fixtures</h1>
+        <h1 className="card-footer">Fixtures By Season Id Info</h1>
         <div className="row">
-          {this.state.allFixtureList.map((fList) => (
+          {this.state.fixturesListBySeasonId.map((fList) => (
             <>
               <div className="col-3">
                 <div className="card h-90 my-3">
@@ -68,7 +69,7 @@ class AllFixtures extends Component {
                       {fList.team_away_1stHalf_goals}
                     </li>
                     <li class="list-group-item">
-                      {fList.team_away_1stHalf_goals}
+                      {fList.team_home_2ndHalf_goals}
                     </li>
                     <li class="list-group-item">
                       {fList.team_away_2ndHalf_goals}
@@ -78,24 +79,14 @@ class AllFixtures extends Component {
                     <li class="list-group-item">{fList.eventsHash}</li>
                     <li class="list-group-item">{fList.lineupsHash}</li>
                     <li class="list-group-item">{fList.statsHash}</li>
-                    <li class="list-group-item">
-                      refrees array is there but not rendered
-                    </li>
+                    <li class="list-group-item">fList.referees will give refree array</li>
                   </ul>
                   <div class="card-body">
                     <Link
                       className="text-dark fs-4 fw-bold"
                       to={PAGE_URLS.HOME}
                     >
-                      {fList.id}
-                    </Link>
-                  </div>
-                  <div class="card-body">
-                    <Link
-                      className="text-dark fs-4 fw-bold"
-                      to={PAGE_URLS.GET_FIXTURE_BY.replace(":by", fList.id)}
-                    >
-                      Get info by id: {fList.id}
+                      Home
                     </Link>
                   </div>
                 </div>
@@ -108,4 +99,4 @@ class AllFixtures extends Component {
   }
 }
 
-export default AllFixtures;
+export default FixturesBySeasonId;

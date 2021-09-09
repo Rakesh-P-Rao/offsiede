@@ -17,6 +17,14 @@ const AllFiles = {
   getTopSubbedOffBySeasonId: require("./codes/Seasons/season"),
   getTopApperancesBySeasonId: require("./codes/Seasons/season"),
   getTopOwnGoalsBySeasonId: require("./codes/Seasons/season"),
+  getFixturesBySeasonId: require("./codes/Seasons/season"),
+  getAllUpcomingBySeasonId: require("./codes/Seasons/season"),
+  getAllInPlayBySeasonId: require("./codes/Seasons/season"),
+  getTeamsPlayingInASeasonBySeasonId: require("./codes/Seasons/season"),
+  getPlayersPlayingInASeasonBySeasonId: require("./codes/Seasons/season"),
+  getEventsByFixtureId: require("./codes/Fixtures/fixture"),
+  getStatsByFixtureId: require("./codes/Fixtures/fixture"),
+  getLineupsByFixtureId: require("./codes/Fixtures/fixture"),
 };
 
 module.exports = AllFiles;

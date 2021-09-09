@@ -25,6 +25,14 @@ app.use(
   AllFiles.allSeasons.getTopSubbedOffBySeasonId,
   AllFiles.allSeasons.getTopApperancesBySeasonId,
   AllFiles.allSeasons.getTopOwnGoalsBySeasonId,
+  AllFiles.allSeasons.getFixturesBySeasonId,
+  AllFiles.allSeasons.getAllInPlayBySeasonId,
+  AllFiles.allSeasons.getAllUpcomingBySeasonId,
+  AllFiles.allSeasons.getTeamsPlayingInASeasonBySeasonId,
+  AllFiles.allSeasons.getPlayersPlayingInASeasonBySeasonId,
+  AllFiles.allFixtures.getEventsByFixtureId,
+  AllFiles.allFixtures.getStatsByFixtureId,
+  AllFiles.allFixtures.getLineupsByFixtureId,
 );
 
 require("dotenv").config();

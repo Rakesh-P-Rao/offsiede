@@ -30,6 +30,7 @@ const fixtures = {
         console.error(error);
       });
   }),
+
   getAllInPlay: app.get("/get-all-in-play", (req, res) => {
     var options = {
       method: "GET",
@@ -54,6 +55,7 @@ const fixtures = {
         console.error(error);
       });
   }),
+
   getAllUpcoming: app.get("/get-all-upcoming", (req, res) => {
     var options = {
       method: "GET",
@@ -78,6 +80,85 @@ const fixtures = {
         console.error(error);
       });
   }),
+
+  getEventsByFixtureId: app.get("/get-events-by-fixture-id/:id", (req, res) => {
+    const id = req.params.id;
+    const pages = req.params.id;
+    var options = {
+      method: "GET",
+      url: `https://football.elenasport.io/v2/fixtures/${id}/events`,
+      qs: {
+        expand: "***expand***",
+        page: pages,
+      },
+      headers: {
+        Authorization: AUTHORIZATION,
+      },
+    };
+
+    axios
+      .request(options)
+      .then(function (response) {
+        console.log(response.data);
+        res.send(response.data.data);
+      })
+      .catch(function (error) {
+        console.error(error);
+      });
+  }),
+
+  getStatsByFixtureId: app.get("/get-stats-by-fixture-id/:id", (req, res) => {
+    const id = req.params.id;
+    var options = {
+      method: "GET",
+      url: `https://football.elenasport.io/v2/fixtures/${id}/stats`,
+      qs: {
+        expand: "***expand***",
+        page: "***page***",
+      },
+      headers: {
+        Authorization: AUTHORIZATION,
+      },
+    };
+
+    axios
+      .request(options)
+      .then(function (response) {
+        console.log(response.data);
+        res.send(response.data.data);
+      })
+      .catch(function (error) {
+        console.error(error);
+      });
+  }),
+
+  getLineupsByFixtureId: app.get(
+    "/get-lineups-by-fixture-id/:id",
+    (req, res) => {
+      const id = req.params.id;
+      var options = {
+        method: "GET",
+        url: `https://football.elenasport.io/v2/fixtures/${id}/lineups`,
+        qs: {
+          expand: "***expand***",
+          page: "***page***",
+        },
+        headers: {
+          Authorization: AUTHORIZATION,
+        },
+      };
+
+      axios
+        .request(options)
+        .then(function (response) {
+          console.log(response.data);
+          res.send(response.data.data);
+        })
+        .catch(function (error) {
+          console.error(error);
+        });
+    }
+  ),
 };
 
 module.exports = fixtures;

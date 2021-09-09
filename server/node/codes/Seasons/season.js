@@ -271,6 +271,151 @@ const seasons = {
         });
     }
   ),
+
+  getFixturesBySeasonId: app.get(
+    "/get-fixtures-by-season-id/:id",
+    (req, res) => {
+      const id = req.params.id;
+      var options = {
+        method: "GET",
+        url: `https://football.elenasport.io/v2/seasons/${id}/fixtures`,
+        qs: {
+          expand: "***expand***",
+          from: "***from***",
+          idTeam1: "***idTeam1***",
+          idTeam2: "***idTeam2***",
+          page: "***page***",
+          round: "***round***",
+          to: "***to***",
+        },
+        headers: {
+          Authorization: AUTHORIZATION,
+        },
+      };
+
+      axios
+        .request(options)
+        .then(function (response) {
+          console.log(response.data);
+          res.send(response.data.data);
+        })
+        .catch(function (error) {
+          console.error(error);
+        });
+    }
+  ),
+
+  getAllUpcomingBySeasonId: app.get(
+    "/get-all-upcoming-by-season-id/:id",
+    (req, res) => {
+      const id = req.params.id;
+      var options = {
+        method: "GET",
+        url: `https://football.elenasport.io/v2/seasons/${id}/upcoming`,
+        qs: {
+          expand: "***expand***",
+          page: "***page***",
+        },
+        headers: {
+          Authorization: AUTHORIZATION,
+        },
+      };
+
+      axios
+        .request(options)
+        .then(function (response) {
+          console.log(response.data);
+          res.send(response.data.data);
+        })
+        .catch(function (error) {
+          console.error(error);
+        });
+    }
+  ),
+
+  getAllInPlayBySeasonId: app.get(
+    "/get-all-in-play-by-season-id/:id",
+    (req, res) => {
+      const id = req.params.id;
+      var options = {
+        method: "GET",
+        url: `https://football.elenasport.io/v2/seasons/${id}/inplay`,
+        qs: {
+          expand: "***expand***",
+          page: "***page***",
+        },
+        headers: {
+          Authorization: AUTHORIZATION,
+        },
+      };
+
+      axios
+        .request(options)
+        .then(function (response) {
+          console.log(response.data);
+          res.send(response.data.data);
+        })
+        .catch(function (error) {
+          console.error(error);
+        });
+    }
+  ),
+
+  getTeamsPlayingInASeasonBySeasonId: app.get(
+    "/get-teams-playing-in-a-season-by-season-id/:id",
+    (req, res) => {
+      const id = req.params.id;
+      var options = {
+        method: "GET",
+        url: `https://football.elenasport.io/v2/seasons/${id}/teams`,
+        qs: {
+          expand: "***expand***",
+          page: "***page***",
+        },
+        headers: {
+          Authorization: AUTHORIZATION,
+        },
+      };
+
+      axios
+        .request(options)
+        .then(function (response) {
+          console.log(response.data);
+          res.send(response.data.data);
+        })
+        .catch(function (error) {
+          console.error(error);
+        });
+    }
+  ),
+
+  getPlayersPlayingInASeasonBySeasonId: app.get(
+    "/get-players-playing-in-a-season-by-season-id/:id",
+    (req, res) => {
+      const id = req.params.id;
+      var options = {
+        method: "GET",
+        url: `https://football.elenasport.io/v2/seasons/${id}/players`,
+        qs: {
+          idTeam: "***idTeam***",
+          page: "***page***",
+        },
+        headers: {
+          Authorization: AUTHORIZATION,
+        },
+      };
+
+      axios
+        .request(options)
+        .then(function (response) {
+          console.log(response.data);
+          res.send(response.data.data);
+        })
+        .catch(function (error) {
+          console.error(error);
+        });
+    }
+  ),
 };
 
 module.exports = seasons;

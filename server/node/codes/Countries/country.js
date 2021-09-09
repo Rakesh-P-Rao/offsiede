@@ -9,7 +9,7 @@ const countries = {
   getAllCountries: app.get("/get-all-countries", (req, res) => {
     var options = {
       method: "GET",
-      url: "https://football.elenasport.io/v2/countries",
+      url: `https://football.elenasport.io/v2/countries`,
       qs: {
         expand: "***expand***",
         name: "***name***",
