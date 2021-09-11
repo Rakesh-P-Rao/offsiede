@@ -100,7 +100,7 @@ class HeaderComponent extends Component {
                   <li>
                     <Link
                       className="dropdown-item bg-dark text-light"
-                      to={PAGE_URLS.GET_ALL_COUNTRIES}
+                      to={PAGE_URLS.GET_ALL_COUNTRIES_LP}
                     >
                       Countries
                     </Link>

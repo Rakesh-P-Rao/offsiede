@@ -8,8 +8,9 @@ class HomePage extends Component {
         this.state = {  }
     }
     render() { 
-        return (
-          <div className="container">
+      return (
+        <div className="container">
+          <>
             <h1>Home</h1>
             <div className="btn btn-info p-3 m-5 text-dark">
               <Link className="text-dark fs-4 fw-bold" to={PAGE_URLS.HOME}>
@@ -65,8 +66,9 @@ class HomePage extends Component {
                 All Upcoming
               </Link>
             </div>
-          </div>
-        );
+          </>
+        </div>
+      );
     }
 }
  

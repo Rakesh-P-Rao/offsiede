@@ -27,7 +27,99 @@ class TopSubbedOn extends Component {
   render() {
     return (
       <div className="container">
-        <h1 className="card-footer">Top Subbed On</h1>
+        <div class="card-header">
+          <ul class="nav nav-tabs card-header-tabs">
+            <li class="nav-item">
+              <Link
+                class="nav-link fw-bold fs-5 btn btn-outline-dark"
+                aria-current="true"
+                to={PAGE_URLS.GET_TOP_SCORERS_BY_SEASON_ID.replace(
+                  ":id",
+                  this.state.seasonId.id
+                )}
+              >
+                Top Scorers
+              </Link>
+            </li>
+            <li class="nav-item">
+              <Link
+                class="nav-link fw-bold fs-5 btn btn-outline-dark"
+                to={PAGE_URLS.GET_TOP_RED_CARDS_BY_SEASON_ID.replace(
+                  ":id",
+                  this.state.seasonId.id
+                )}
+              >
+                Red Cards
+              </Link>
+            </li>
+            <li class="nav-item">
+              <Link
+                class="nav-link fw-bold fs-5 btn btn-outline-dark"
+                to={PAGE_URLS.GET_TOP_YELLOW_CARDS_BY_SEASON_ID.replace(
+                  ":id",
+                  this.state.seasonId.id
+                )}
+              >
+                Yellow Cards
+              </Link>
+            </li>
+            <li class="nav-item">
+              <Link
+                class="nav-link fw-bold fs-5 btn btn-outline-dark"
+                to={PAGE_URLS.GET_TOP_APPEARANCES_BY_SEASON_ID.replace(
+                  ":id",
+                  this.state.seasonId.id
+                )}
+              >
+                Appearances
+              </Link>
+            </li>
+            <li class="nav-item">
+              <Link
+                class="nav-link fw-bold fs-5 active"
+                to={PAGE_URLS.GET_TOP_SUBBED_ON_BY_SEASON_ID.replace(
+                  ":id",
+                  this.state.seasonId.id
+                )}
+              >
+                Subbed On
+              </Link>
+            </li>
+            <li class="nav-item">
+              <Link
+                class="nav-link fw-bold fs-5 btn btn-outline-dark"
+                to={PAGE_URLS.GET_TOP_SUBBED_OFF_BY_SEASON_ID.replace(
+                  ":id",
+                  this.state.seasonId.id
+                )}
+              >
+                Subbed Off
+              </Link>
+            </li>
+            <li class="nav-item">
+              <Link
+                class="nav-link fw-bold fs-5 btn btn-outline-dark"
+                to={PAGE_URLS.GET_TOP_OWN_GOALS_BY_SEASON_ID.replace(
+                  ":id",
+                  this.state.seasonId.id
+                )}
+              >
+                Own Goals
+              </Link>
+            </li>
+            <li class="nav-item">
+              <Link
+                class="nav-link fw-bold fs-5 btn btn-outline-dark"
+                to={PAGE_URLS.GET_SEASON_BY_SEASON_ID.replace(
+                  ":id",
+                  this.state.seasonId.id
+                )}
+              >
+                Back
+              </Link>
+            </li>
+          </ul>
+        </div>
         <div className="row">
           {this.state.topSubbedOnList.map((tsoList) => (
             <>

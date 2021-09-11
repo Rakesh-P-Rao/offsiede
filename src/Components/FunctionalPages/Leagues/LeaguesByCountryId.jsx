@@ -27,7 +27,33 @@ class LeaguesByCountryId extends Component {
   render() {
     return (
       <div className="container">
-        <h1 className="card-footer">Leagues Info</h1>
+        <div class="card-header">
+          <ul class="nav nav-tabs card-header-tabs">
+            <li class="nav-item">
+              <Link
+                class="nav-link fw-bold fs-4 text-dark"
+                aria-current="true"
+                to={PAGE_URLS.GET_COUNTRY_BY_COUNTRY_ID.replace(
+                  ":id",
+                  this.state.countryId.id
+                )}
+              >
+                Country Info
+              </Link>
+            </li>
+            <li class="nav-item">
+              <Link
+                class="nav-link active fw-bold fs-4 text-dark"
+                to={PAGE_URLS.GET_LEAGUES_BY_COUNTRY_ID.replace(
+                  ":id",
+                  this.state.countryId.id
+                )}
+              >
+                League Info
+              </Link>
+            </li>
+          </ul>
+        </div>
         <div className="row">
           {this.state.leaguesListByCountryId.map((lList) => (
             <>
@@ -51,7 +77,7 @@ class LeaguesByCountryId extends Component {
                       className="text-dark fs-4 fw-bold"
                       to={PAGE_URLS.HOME}
                     >
-                      Link
+                      Home
                     </Link>
                   </div>
                 </div>

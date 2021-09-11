@@ -27,7 +27,44 @@ class LineupsByFixtureId extends Component {
   render() {    
     return (
       <div className="container">
-        <h1 className="card-footer">Lineups By Fixture Id Info</h1>
+        <div class="card-header">
+          <ul class="nav nav-tabs card-header-tabs">
+            <li class="nav-item">
+              <Link
+                class="nav-link fw-bold fs-4 text-dark"
+                aria-current="true"
+                to={PAGE_URLS.GET_EVENTS_BY_FIXTURE_ID.replace(
+                  ":id",
+                  this.state.fixtureId.id
+                )}
+              >
+                Events Info
+              </Link>
+            </li>
+            <li class="nav-item">
+              <Link
+                class="nav-link fw-bold fs-4 text-dark"
+                to={PAGE_URLS.GET_STATS_BY_FIXTURE_ID.replace(
+                  ":id",
+                  this.state.fixtureId.id
+                )}
+              >
+                Stats Info
+              </Link>
+            </li>
+            <li class="nav-item">
+              <Link
+                class="nav-link active fw-bold fs-4 text-dark"
+                to={PAGE_URLS.GET_LINEUPS_BY_FIXTURE_ID.replace(
+                  ":id",
+                  this.state.fixtureId.id
+                )}
+              >
+                Lineups Info
+              </Link>
+            </li>
+          </ul>
+        </div>
         <div className="row">
           {this.state.lineupsListByFixtureId.map((luList) => (
             <>
@@ -45,7 +82,9 @@ class LineupsByFixtureId extends Component {
                     <li class="list-group-item">{luList.col} col is here</li>
                     <li class="list-group-item">{luList.position}</li>
                     <li class="list-group-item">{luList.shirtNumber}</li>
-                    <li class="list-group-item">{luList.isStartingXI} is in starting 11 is here</li>
+                    <li class="list-group-item">
+                      {luList.isStartingXI} is in starting 11 is here
+                    </li>
                   </ul>
                   <div class="card-body">
                     <Link

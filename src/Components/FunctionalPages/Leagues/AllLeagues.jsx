@@ -32,15 +32,13 @@ class AllLeagues extends Component {
             <>
               <div className="col-3">
                 <div className="card h-90 my-3">
-                  <img src={"n/a"} className="card-img-top" alt="player dp" />
-                  <div class="card-body"></div>
                   <ul class="list-group list-group-flush">
                     <li class="list-group-item">{lList.id}</li>
                     <li class="list-group-item">{lList.idCountry}</li>
                     <li class="list-group-item">{lList.countryName}</li>
                     <li class="list-group-item">{lList.name}</li>
                     <li class="list-group-item">
-                      {lList.nationalLeague} nationalLeague boolean value{" "}
+                      {lList.nationalLeague} nationalLeague boolean value
                     </li>
                     <li class="list-group-item">
                       {lList.clubsLeague} clubsLeague boolean value
@@ -51,15 +49,15 @@ class AllLeagues extends Component {
                       className="text-dark fs-4 fw-bold"
                       to={PAGE_URLS.HOME}
                     >
-                      Link
+                      Home
                     </Link>
                   </div>
                   <div class="card-body">
                     <Link
                       className="text-dark fs-4 fw-bold"
-                      to={PAGE_URLS.GET_LEAGUE_BY.replace(":by", lList.id)}
+                      to={PAGE_URLS.GET_LEAGUE_BY_LEAGUE_ID.replace(":id", lList.id)}
                     >
-                      Get info by id: {lList.id}
+                      More info
                     </Link>
                   </div>
                 </div>

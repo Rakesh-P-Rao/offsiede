@@ -11,12 +11,9 @@ import AllSeasons from "../FunctionalPages/Seasons/AllSeasons";
 import AllFixtures from "../FunctionalPages/Fixtures/AllFixtures";
 import AllInPlay from "../FunctionalPages/Fixtures/AllInPlay";
 import AllUpcoming from "../FunctionalPages/Fixtures/AllUpcoming";
-import CountryBy from "../FunctionalPages/Countries/CountryBy";
 import CountryByCountryId from "../FunctionalPages/Countries/CountryByCountryId";
 import LeaguesByCountryId from "../FunctionalPages/Leagues/LeaguesByCountryId";
 import LeagueByLeagueId from "../FunctionalPages/Leagues/LeagueByLeagueId";
-import LeagueBy from "../FunctionalPages/Leagues/LeagueBy";
-import SeasonBy from "../FunctionalPages/Seasons/SeasonBy";
 import SeasonBySeasonId from "../FunctionalPages/Seasons/SeasonBySeasonId";
 import SeasonByLeagueId from "../FunctionalPages/Seasons/SeasonByLeagueId";
 import StageBySeasonId from "../FunctionalPages/Stages/StageBySeasonId";
@@ -32,7 +29,6 @@ import TeamsPlayingInASeasonBySeasonId from "../FunctionalPages/Team/TeamsPlayin
 import InPlayBySeasonId from "../FunctionalPages/Fixtures/InPlayBySeasonId";
 import UpcomingBySeasonId from "../FunctionalPages/Fixtures/UpcomingBySeasonId";
 import FixturesBySeasonId from "../FunctionalPages/Fixtures/FixturesBySeasonId";
-import FixtureBy from "../FunctionalPages/Fixtures/FixtureBy";
 import EventsByFixtureId from "../FunctionalPages/Fixtures/EventsByFixtureId";
 import StatsByFixtureId from "../FunctionalPages/Fixtures/StatsByFixtureId";
 import LineupsByFixtureId from "../FunctionalPages/Fixtures/LineupsByFixtureId";
@@ -45,8 +41,8 @@ class Layout extends Component {
   render() {
     return (
       <BrowserRouter>
-        <header>
-          <HeaderComponent />
+        <header style={{marginTop:"72px"}}>
+          <HeaderComponent/>
         </header>
 
         <main>
@@ -83,11 +79,6 @@ class Layout extends Component {
               component={AllUpcoming}
             />
             <Route
-              path={PAGE_URLS.GET_COUNTRY_BY}
-              exact
-              component={CountryBy}
-            />
-            <Route
               path={PAGE_URLS.GET_COUNTRY_BY_COUNTRY_ID}
               exact
               component={CountryByCountryId}
@@ -97,7 +88,6 @@ class Layout extends Component {
               exact
               component={LeaguesByCountryId}
             />
-            <Route path={PAGE_URLS.GET_LEAGUE_BY} exact component={LeagueBy} />
             <Route
               path={PAGE_URLS.GET_LEAGUE_BY_LEAGUE_ID}
               exact
@@ -108,7 +98,6 @@ class Layout extends Component {
               exact
               component={SeasonByLeagueId}
             />
-            <Route path={PAGE_URLS.GET_SEASON_BY} exact component={SeasonBy} />
             <Route
               path={PAGE_URLS.GET_SEASON_BY_SEASON_ID}
               exact
@@ -178,11 +167,6 @@ class Layout extends Component {
               path={PAGE_URLS.GET_PLAYERS_PLAYING_IN_A_SEASON_BY_SEASON_ID}
               exact
               component={PlayersPlayingInASeasonBySeasonId}
-            />
-            <Route
-              path={PAGE_URLS.GET_FIXTURE_BY}
-              exact
-              component={FixtureBy}
             />
             <Route
               path={PAGE_URLS.GET_EVENTS_BY_FIXTURE_ID}

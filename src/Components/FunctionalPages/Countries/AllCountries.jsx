@@ -59,12 +59,12 @@ class AllCountries extends Component {
                   <div class="card-body">
                     <Link
                       className="text-dark fs-4 fw-bold"
-                      to={PAGE_URLS.GET_COUNTRY_BY.replace(
-                        ":by",
+                      to={PAGE_URLS.GET_COUNTRY_BY_COUNTRY_ID.replace(
+                        ":id",
                         cList.id
                       )}
                     >
-                      Get info by id: {cList.id}
+                      More info 
                     </Link>
                   </div>
                 </div>

@@ -93,9 +93,9 @@ class AllFixtures extends Component {
                   <div class="card-body">
                     <Link
                       className="text-dark fs-4 fw-bold"
-                      to={PAGE_URLS.GET_FIXTURE_BY.replace(":by", fList.id)}
+                      to={PAGE_URLS.GET_EVENTS_BY_FIXTURE_ID.replace(":id", fList.id)}
                     >
-                      Get info by id: {fList.id}
+                      More info
                     </Link>
                   </div>
                 </div>

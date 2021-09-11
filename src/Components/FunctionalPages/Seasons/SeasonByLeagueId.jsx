@@ -27,7 +27,33 @@ class SeasonByLeagueId extends Component {
   render() {
     return (
       <div className="container">
-        <h1 className="card-footer">Season Info</h1>
+        <div class="card-header">
+          <ul class="nav nav-tabs card-header-tabs">
+            <li class="nav-item">
+              <Link
+                class="nav-link fw-bold fs-4 text-dark"
+                aria-current="true"
+                to={PAGE_URLS.GET_LEAGUE_BY_LEAGUE_ID.replace(
+                  ":id",
+                  this.state.leagueId.id
+                )}
+              >
+                League Info
+              </Link>
+            </li>
+            <li class="nav-item">
+              <Link
+                class="nav-link active fw-bold fs-4 text-dark"
+                to={PAGE_URLS.GET_SEASON_BY_LEAGUE_ID.replace(
+                  ":id",
+                  this.state.leagueId.id
+                )}
+              >
+                Season Info
+              </Link>
+            </li>
+          </ul>
+        </div>
         <div className="row">
           {this.state.seasonListByLeagueId.map((sList) => (
             <>

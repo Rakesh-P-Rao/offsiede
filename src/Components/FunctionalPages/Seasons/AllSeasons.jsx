@@ -50,9 +50,9 @@ class AllSeasons extends Component {
                   <div class="card-body">
                     <Link
                       className="text-dark fs-4 fw-bold"
-                      to={PAGE_URLS.GET_SEASON_BY.replace(":by", sList.id)}
+                      to={PAGE_URLS.GET_SEASON_BY_SEASON_ID.replace(":id", sList.id)}
                     >
-                      Get info by id: {sList.id}
+                      Season info
                     </Link>
                   </div>
                 </div>
