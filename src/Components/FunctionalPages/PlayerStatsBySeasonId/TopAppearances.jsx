@@ -8,6 +8,7 @@ class TopApperances extends Component {
     super(props);
     this.state = {
       topAppearancesList: [],
+      pagination: {},
       seasonId: this.props.match.params,
     };
   }
@@ -19,7 +20,8 @@ class TopApperances extends Component {
   getListOfTopAppearances = (id) => {
     getTopApperancesBySeasonId(this.state.seasonId.id).then((response) => {
       this.setState({
-        topAppearancesList: response,
+        topAppearancesList: response.data,
+        pagination: response.pagination,
       });
     });
   };

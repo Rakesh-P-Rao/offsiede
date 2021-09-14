@@ -42,3 +42,19 @@ export function getLeaguesByCountryId(id) {
       }
     );
 }
+
+export function getCountryByCountryName(name) {
+  return new HttpRequest(
+    `${SERVER_ACTIONS.GET_COUNTRY_BY_COUNTRY_NAME}/${name}`,
+    "GET"
+  )
+    .requestWithAuthentication()
+    .then(
+      (response) => {
+        return Promise.resolve(response.data);
+      },
+      (error) => {
+        return Promise.reject(error);
+      }
+    );
+}

@@ -8,6 +8,7 @@ class AllFixtures extends Component {
     super(props);
     this.state = {
       allFixtureList: [],
+      pagination: {},
     };
   }
 
@@ -18,7 +19,8 @@ class AllFixtures extends Component {
   getAllListOfFixtures = () => {
     getAllFixturesList().then((response) => {
       this.setState({
-        allFixtureList: response,
+        allFixtureList: response.data,
+        pagination: response.pagination,
       });
     });
   };

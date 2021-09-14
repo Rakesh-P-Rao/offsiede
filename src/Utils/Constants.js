@@ -28,6 +28,7 @@ export const SERVER_ACTIONS = {
   GET_EVENTS_BY_FIXTURE_ID: "/get-events-by-fixture-id",
   GET_STATS_BY_FIXTURE_ID: "/get-stats-by-fixture-id",
   GET_LINEUPS_BY_FIXTURE_ID: "/get-lineups-by-fixture-id",
+  GET_COUNTRY_BY_COUNTRY_NAME: "/get-country-by-name",
 };
 
 export const PAGE_URLS = {
@@ -61,6 +62,6 @@ export const PAGE_URLS = {
   GET_EVENTS_BY_FIXTURE_ID: "/get-events-by-fixture-id/:id",
   GET_STATS_BY_FIXTURE_ID: "/get-stats-by-fixture-id/:id",
   GET_LINEUPS_BY_FIXTURE_ID: "/get-lineups-by-fixture-id/:id",
-  GET_ALL_COUNTRIES_LP: "/get-all-countries-lp",
+  GET_COUNTRY_BY_COUNTRY_NAME: "/get-country-by-name/:name",
   PAGE_NOT_FOUND: "**",
 };

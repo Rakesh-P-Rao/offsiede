@@ -8,6 +8,7 @@ class TopYellowCards extends Component {
     super(props);
     this.state = {
       topYellowCardsList: [],
+      pagination: {},
       seasonId: this.props.match.params,
     };
   }
@@ -19,7 +20,8 @@ class TopYellowCards extends Component {
   getListOfTopYellowCards = (id) => {
     getTopYellowCardsBySeasonId(this.state.seasonId.id).then((response) => {
       this.setState({
-        topYellowCardsList: response,
+        topYellowCardsList: response.data,
+        pagination: response.pagination,
       });
     });
   };

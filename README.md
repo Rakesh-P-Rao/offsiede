@@ -1,6 +1,6 @@
 # Git commands
 git pull gitlabOrigin master --allow-unrelated-histories
-git push -u gitlabOrigin master 
+git push -u gitlabOrigin master
 
 # Getting Started with Create React App
 

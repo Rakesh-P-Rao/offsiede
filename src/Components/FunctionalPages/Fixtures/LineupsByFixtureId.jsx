@@ -8,6 +8,7 @@ class LineupsByFixtureId extends Component {
     super(props);
     this.state = {
       lineupsListByFixtureId: [],
+      pagination: {},
       fixtureId: this.props.match.params,
     };
   }
@@ -19,7 +20,8 @@ class LineupsByFixtureId extends Component {
   getLineupsInfoByFixtureId = (id) => {
     getLineupsByFixtureId(this.state.fixtureId.id).then((response) => {
       this.setState({
-        lineupsListByFixtureId: response,
+        lineupsListByFixtureId: response.data,
+        pagination: response.pagination,
       });
     });
   };

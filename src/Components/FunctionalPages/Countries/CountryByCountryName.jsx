@@ -1,25 +1,26 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { PAGE_URLS } from "../../../Utils/Constants";
-import { getAllCountriesList } from './../FunctionalApiActions/Countries/faaCountries';
+import { getCountryByCountryName } from "../FunctionalApiActions/Countries/faaCountries";
 
-class Prototype extends Component {
+class CountryByCountryName extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      prototypeList: [],
+      countryByNameList: [],
       pagination: {},
+      countryId: this.props.match.params,
     };
   }
 
   componentDidMount() {
-    this.getAllListOfCountries();
+    this.getCountryInfoByName();
   }
 
-  getAllListOfCountries = () => {
-    getAllCountriesList().then((response) => {
+  getCountryInfoByName = (name) => {
+    getCountryByCountryName(this.state.countryId.name).then((response) => {
       this.setState({
-        prototypeList: response,
+        countryByNameList: response.data,
         pagination: response.pagination,
       });
     });
@@ -39,24 +40,24 @@ class Prototype extends Component {
                   this.state.countryId.id
                 )}
               >
-                Info
+                Country Info
               </Link>
             </li>
             <li class="nav-item">
               <Link
-                class="nav-link fw-bold fs-4 btn btn-outline-dark"
+                class="nav-link fw-bold fs-4 text-dark"
                 to={PAGE_URLS.GET_LEAGUES_BY_COUNTRY_ID.replace(
                   ":id",
                   this.state.countryId.id
                 )}
               >
-                Info
+                League Info
               </Link>
             </li>
           </ul>
         </div>
         <div className="row">
-          {this.state.prototypeList.map((cList) => (
+          {this.state.countryByNameList.map((cList) => (
             <>
               <div className="col-3">
                 <div className="card h-90 my-3">
@@ -67,14 +68,21 @@ class Prototype extends Component {
                   />
                   <div class="card-body"></div>
                   <ul class="list-group list-group-flush">
-                    <li class="list-group-item">item</li>
+                    <li class="list-group-item">{cList.id}</li>
+                    <li class="list-group-item">{cList.name}</li>
+                    <li class="list-group-item">{cList.alpha2code}</li>
+                    <li class="list-group-item">{cList.alpha3code}</li>
+                    <li class="list-group-item">{cList.capital}</li>
+                    <li class="list-group-item">{cList.region}</li>
+                    <li class="list-group-item">{cList.subregion}</li>
+                    <li class="list-group-item">{cList.timezones}</li>
                   </ul>
                   <div class="card-body">
                     <Link
                       className="text-dark fs-4 fw-bold"
                       to={PAGE_URLS.HOME}
                     >
-                      {cList.name}
+                      Home
                     </Link>
                   </div>
                 </div>
@@ -87,4 +95,4 @@ class Prototype extends Component {
   }
 }
 
-export default Prototype;
+export default CountryByCountryName;

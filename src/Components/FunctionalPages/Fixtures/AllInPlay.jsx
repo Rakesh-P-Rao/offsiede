@@ -8,6 +8,7 @@ class AllInPlay extends Component {
     super(props);
     this.state = {
       allInPlayList: [],
+      pagination: {},
     };
   }
 
@@ -18,7 +19,8 @@ class AllInPlay extends Component {
   getAllListOfAllInPlay = () => {
     getAllInPlayList().then((response) => {
       this.setState({
-        allInPlayList: response,
+        allInPlayList: response.data,
+        pagination: response.pagination,
       });
     });
   };

@@ -8,6 +8,7 @@ class InPlayBySeasonId extends Component {
     super(props);
     this.state = {
       inPlayListBySeasonId: [],
+      pagination: {},
       seasonId: this.props.match.params,
     };
   }
@@ -19,7 +20,8 @@ class InPlayBySeasonId extends Component {
   getInPlayInfoBySeasonId = (id) => {
     getAllInPlayBySeasonId(this.state.seasonId.id).then((response) => {
       this.setState({
-        inPlayListBySeasonId: response,
+        inPlayListBySeasonId: response.data,
+        pagination: response.pagination,
       });
     });
   };

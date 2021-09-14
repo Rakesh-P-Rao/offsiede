@@ -24,7 +24,7 @@ const countries = {
       .request(options)
       .then(function (response) {
         console.log(response.data);
-        res.send(response.data.data);
+        res.send(response.data);
       })
       .catch(function (error) {
         console.error(error);
@@ -49,7 +49,7 @@ const countries = {
         .request(options)
         .then(function (response) {
           console.log(response.data);
-          res.send(response.data.data);
+          res.send(response.data);
         })
         .catch(function (error) {
           console.error(error);
@@ -75,13 +75,38 @@ const countries = {
         .request(options)
         .then(function (response) {
           console.log(response.data);
-          res.send(response.data.data);
+          res.send(response.data);
         })
         .catch(function (error) {
           console.error(error);
         });
     }
   ),
+
+  getCountryByCountryName: app.get("/get-country-by-name/:name", (req, res) => {
+    const name = req.params.name;
+    var options = {
+      method: "GET",
+      url: `https://football.elenasport.io/v2/countries?name=${name}`,
+      qs: {
+        expand: "***expand***",
+        name: "***name***",
+        page: "***page***",
+      },
+      headers: {
+        Authorization: AUTHORIZATION,
+      },
+    };
+    axios
+      .request(options)
+      .then(function (response) {
+        console.log(response.data);
+        res.send(response.data);
+      })
+      .catch(function (error) {
+        console.error(error);
+      });
+  }),
 };
 
 module.exports = countries;

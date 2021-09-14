@@ -8,6 +8,7 @@ class TopOwnGoals extends Component {
     super(props);
     this.state = {
       topOwnGoalsList: [],
+      pagination: {},
       seasonId: this.props.match.params,
     };
   }
@@ -19,7 +20,8 @@ class TopOwnGoals extends Component {
   getListOfTopOwnGoals = (id) => {
     getTopOwnGoalsBySeasonId(this.state.seasonId.id).then((response) => {
       this.setState({
-        topOwnGoalsList: response,
+        topOwnGoalsList: response.data,
+        pagination: response.pagination,
       });
     });
   };

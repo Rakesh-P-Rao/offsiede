@@ -8,6 +8,7 @@ class TopScorers extends Component {
     super(props);
     this.state = {
       topScorersList: [],
+      pagination: {},
       seasonId: this.props.match.params,
     };
   }
@@ -19,7 +20,8 @@ class TopScorers extends Component {
   getListOfTopScorers = (id) => {
     getTopScorersBySeasonId(this.state.seasonId.id).then((response) => {
       this.setState({
-        topScorersList: response,
+        topScorersList: response.data,
+        pagination: response.pagination,
       });
     });
   };

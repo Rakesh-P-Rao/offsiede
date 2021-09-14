@@ -8,6 +8,7 @@ class CountryByCountryId extends Component {
     super(props);
     this.state = {
       countryByIdList: [],
+      pagination: {},
       countryId: this.props.match.params,
     };
   }
@@ -19,7 +20,8 @@ class CountryByCountryId extends Component {
   getCountryInfoById = (id) => {
     getCountryByCountryId(this.state.countryId.id).then((response) => {
       this.setState({
-        countryByIdList: response,
+        countryByIdList: response.data,
+        pagination: response.pagination,
       });
     });
   };

@@ -8,6 +8,7 @@ class FixturesBySeasonId extends Component {
     super(props);
     this.state = {
       fixturesListBySeasonId: [],
+      pagination: {},
       seasonId: this.props.match.params,
     };
   }
@@ -19,7 +20,8 @@ class FixturesBySeasonId extends Component {
   getFixturesInfoBySeasonId = (id) => {
     getFixturesBySeasonId(this.state.seasonId.id).then((response) => {
       this.setState({
-        fixturesListBySeasonId: response,
+        fixturesListBySeasonId: response.data,
+        pagination: response.pagination,
       });
     });
   };

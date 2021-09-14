@@ -24,7 +24,7 @@ const leagues = {
       .request(options)
       .then(function (response) {
         console.log(response.data);
-        res.send(response.data.data);
+        res.send(response.data);
       })
       .catch(function (error) {
         console.error(error);
@@ -47,7 +47,7 @@ const leagues = {
       .request(options)
       .then(function (response) {
         console.log(response.data);
-        res.send(response.data.data);
+        res.send(response.data);
       })
       .catch(function (error) {
         console.error(error);
@@ -70,7 +70,7 @@ const leagues = {
       .request(options)
       .then(function (response) {
         console.log(response.data);
-        res.send(response.data.data);
+        res.send(response.data);
       })
       .catch(function (error) {
         console.error(error);

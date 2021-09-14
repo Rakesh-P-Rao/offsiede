@@ -8,6 +8,7 @@ class AllSeasons extends Component {
     super(props);
     this.state = {
       allSeasonList: [],
+      pagination: {},
     };
   }
 
@@ -18,7 +19,8 @@ class AllSeasons extends Component {
   getAllListOfSeasons = () => {
     getAllSeasonsList().then((response) => {
       this.setState({
-        allSeasonList: response,
+        allSeasonList: response.data,
+        pagination: response.pagination,
       });
     });
   };

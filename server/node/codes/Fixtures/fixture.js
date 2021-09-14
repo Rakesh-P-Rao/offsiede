@@ -24,7 +24,7 @@ const fixtures = {
       .request(options)
       .then(function (response) {
         console.log(response.data);
-        res.send(response.data.data);
+        res.send(response.data);
       })
       .catch(function (error) {
         console.error(error);
@@ -49,7 +49,7 @@ const fixtures = {
       .request(options)
       .then(function (response) {
         console.log(response.data);
-        res.send(response.data.data);
+        res.send(response.data);
       })
       .catch(function (error) {
         console.error(error);
@@ -74,7 +74,7 @@ const fixtures = {
       .request(options)
       .then(function (response) {
         console.log(response.data);
-        res.send(response.data.data);
+        res.send(response.data);
       })
       .catch(function (error) {
         console.error(error);
@@ -83,13 +83,12 @@ const fixtures = {
 
   getEventsByFixtureId: app.get("/get-events-by-fixture-id/:id", (req, res) => {
     const id = req.params.id;
-    const pages = req.params.id;
     var options = {
       method: "GET",
       url: `https://football.elenasport.io/v2/fixtures/${id}/events`,
       qs: {
         expand: "***expand***",
-        page: pages,
+        page: "***page***",
       },
       headers: {
         Authorization: AUTHORIZATION,
@@ -100,7 +99,7 @@ const fixtures = {
       .request(options)
       .then(function (response) {
         console.log(response.data);
-        res.send(response.data.data);
+        res.send(response.data);
       })
       .catch(function (error) {
         console.error(error);
@@ -125,7 +124,7 @@ const fixtures = {
       .request(options)
       .then(function (response) {
         console.log(response.data);
-        res.send(response.data.data);
+        res.send(response.data);
       })
       .catch(function (error) {
         console.error(error);
@@ -152,7 +151,7 @@ const fixtures = {
         .request(options)
         .then(function (response) {
           console.log(response.data);
-          res.send(response.data.data);
+          res.send(response.data);
         })
         .catch(function (error) {
           console.error(error);

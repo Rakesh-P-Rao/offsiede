@@ -8,6 +8,7 @@ class AllUpcoming extends Component {
     super(props);
     this.state = {
       allUpcomingList: [],
+      pagination: {},
     };
   }
 
@@ -18,7 +19,8 @@ class AllUpcoming extends Component {
   getAllListOfUpcoming = () => {
     getAllUpcomingList().then((response) => {
       this.setState({
-        allUpcomingList: response,
+        allUpcomingList: response.data,
+        pagination: response.pagination,
       });
     });
   };

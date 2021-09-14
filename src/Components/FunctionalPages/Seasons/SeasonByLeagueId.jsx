@@ -8,6 +8,7 @@ class SeasonByLeagueId extends Component {
     super(props);
     this.state = {
       seasonListByLeagueId: [],
+      pagination: {},
       leagueId: this.props.match.params,
     };
   }
@@ -19,7 +20,8 @@ class SeasonByLeagueId extends Component {
   getSeasonInfoByLeagueId = (id) => {
     getSeasonByLeagueId(this.state.leagueId.id).then((response) => {
       this.setState({
-        seasonListByLeagueId: response,
+        seasonListByLeagueId: response.data,
+        pagination: response.pagination,
       });
     });
   };

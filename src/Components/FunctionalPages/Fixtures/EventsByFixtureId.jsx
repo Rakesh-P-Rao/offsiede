@@ -8,6 +8,7 @@ class EventsByFixtureId extends Component {
     super(props);
     this.state = {
       eventsListByFixtureId: [],
+      pagination: {},
       fixtureId: this.props.match.params,
     };
   }
@@ -19,7 +20,8 @@ class EventsByFixtureId extends Component {
   getEventsInfoByFixtureId = (id) => {
     getEventsByFixtureId(this.state.fixtureId.id).then((response) => {
       this.setState({
-        eventsListByFixtureId: response,
+        eventsListByFixtureId: response.data,
+        pagination: response.pagination,
       });
     });
   };

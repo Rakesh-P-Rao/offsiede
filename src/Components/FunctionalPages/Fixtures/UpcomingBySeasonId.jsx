@@ -8,6 +8,7 @@ class UpcomingBySeasonId extends Component {
     super(props);
     this.state = {
       upcomingListBySeasonId: [],
+      pagination: {},
       seasonId: this.props.match.params,
     };
   }
@@ -19,7 +20,8 @@ class UpcomingBySeasonId extends Component {
   getUpcomingInfoBySeasonId = (id) => {
     getAllUpcomingBySeasonId(this.state.seasonId.id).then((response) => {
       this.setState({
-        upcomingListBySeasonId: response,
+        upcomingListBySeasonId: response.data,
+        pagination: response.pagination,
       });
     });
   };

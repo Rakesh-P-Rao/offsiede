@@ -33,6 +33,7 @@ app.use(
   AllFiles.allFixtures.getEventsByFixtureId,
   AllFiles.allFixtures.getStatsByFixtureId,
   AllFiles.allFixtures.getLineupsByFixtureId,
+  AllFiles.allCountries.getCountryByCountryName,
 );
 
 require("dotenv").config();

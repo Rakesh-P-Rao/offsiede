@@ -25,6 +25,7 @@ const AllFiles = {
   getEventsByFixtureId: require("./codes/Fixtures/fixture"),
   getStatsByFixtureId: require("./codes/Fixtures/fixture"),
   getLineupsByFixtureId: require("./codes/Fixtures/fixture"),
+  getCountryByCountryName: require("./codes/Countries/country"),
 };
 
 module.exports = AllFiles;

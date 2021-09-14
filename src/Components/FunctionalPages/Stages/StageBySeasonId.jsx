@@ -8,6 +8,7 @@ class StageBySeasonId extends Component {
     super(props);
     this.state = {
       stageListBySeasonId: [],
+      pagination: {},
       seasonId: this.props.match.params,
     };
   }
@@ -19,7 +20,8 @@ class StageBySeasonId extends Component {
   getStageInfoBySeasonId = (id) => {
     getStageBySeasonId(this.state.seasonId.id).then((response) => {
       this.setState({
-        stageListBySeasonId: response,
+        stageListBySeasonId: response.data,
+        pagination: response.pagination,
       });
     });
   };

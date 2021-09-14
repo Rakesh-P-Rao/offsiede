@@ -8,6 +8,7 @@ class TopRedCards extends Component {
     super(props);
     this.state = {
       topRedCardsList: [],
+      pagination: {},
       seasonId: this.props.match.params,
     };
   }
@@ -19,7 +20,8 @@ class TopRedCards extends Component {
   getListOfTopRedCards = (id) => {
     getTopRedCardsBySeasonId(this.state.seasonId.id).then((response) => {
       this.setState({
-        topRedCardsList: response,
+        topRedCardsList: response.data,
+        pagination: response.pagination,
       });
     });
   };

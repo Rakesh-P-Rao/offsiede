@@ -8,6 +8,7 @@ class AllLeagues extends Component {
     super(props);
     this.state = {
       allLeaguesList: [],
+      pagination: {},
     };
   }
 
@@ -18,7 +19,8 @@ class AllLeagues extends Component {
   getAllListOfLeagues = () => {
     getAllLeaguesList().then((response) => {
       this.setState({
-        allLeaguesList: response,
+        allLeaguesList: response.data,
+        pagination: response.pagination,
       });
     });
   };

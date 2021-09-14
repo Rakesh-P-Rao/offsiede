@@ -8,6 +8,7 @@ class TopSubbedOn extends Component {
     super(props);
     this.state = {
       topSubbedOnList: [],
+      pagination: {},
       seasonId: this.props.match.params,
     };
   }
@@ -19,7 +20,8 @@ class TopSubbedOn extends Component {
   getListOfTopSubbedOn = (id) => {
     getTopSubbedOnBySeasonId(this.state.seasonId.id).then((response) => {
       this.setState({
-        topSubbedOnList: response,
+        topSubbedOnList: response.data,
+        pagination: response.pagination,
       });
     });
   };

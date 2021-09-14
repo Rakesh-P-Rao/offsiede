@@ -32,6 +32,7 @@ import FixturesBySeasonId from "../FunctionalPages/Fixtures/FixturesBySeasonId";
 import EventsByFixtureId from "../FunctionalPages/Fixtures/EventsByFixtureId";
 import StatsByFixtureId from "../FunctionalPages/Fixtures/StatsByFixtureId";
 import LineupsByFixtureId from "../FunctionalPages/Fixtures/LineupsByFixtureId";
+import CountryByCountryName from "../FunctionalPages/Countries/CountryByCountryName";
 
 class Layout extends Component {
   constructor(props) {
@@ -41,8 +42,8 @@ class Layout extends Component {
   render() {
     return (
       <BrowserRouter>
-        <header style={{marginTop:"72px"}}>
-          <HeaderComponent/>
+        <header style={{ marginTop: "72px" }}>
+          <HeaderComponent />
         </header>
 
         <main>
@@ -182,6 +183,11 @@ class Layout extends Component {
               path={PAGE_URLS.GET_LINEUPS_BY_FIXTURE_ID}
               exact
               component={LineupsByFixtureId}
+            />
+            <Route
+              path={PAGE_URLS.GET_COUNTRY_BY_COUNTRY_NAME}
+              exact
+              component={CountryByCountryName}
             />
             <Route
               path={PAGE_URLS.PAGE_NOT_FOUND}

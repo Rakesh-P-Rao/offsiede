@@ -8,6 +8,7 @@ class AllCountries extends Component {
     super(props);
     this.state = {
       allCountryList: [],
+      pagination: {},
     };
   }
 
@@ -18,7 +19,8 @@ class AllCountries extends Component {
   getAllListOfCountries = () => {
     getAllCountriesList().then((response) => {
       this.setState({
-        allCountryList: response,
+        allCountryList: response.data,
+        pagination: response.pagination,
       });
     });
   };
@@ -64,13 +66,50 @@ class AllCountries extends Component {
                         cList.id
                       )}
                     >
-                      More info 
+                      More info
                     </Link>
                   </div>
                 </div>
               </div>
             </>
           ))}
+        </div>
+        <div className="row">
+          <div className="col-4">
+            <h1>This is footer and pagination</h1>
+          </div>
+          <div className="col-4"></div>
+          <div className="col-4">
+            <nav aria-label="Page navigation example">
+              <ul class="pagination mr-5">
+                <li class="page-item disabled">
+                  <Link class="page-link" to="#">
+                    Previous
+                  </Link>
+                </li>
+                <li class="page-item">
+                  <Link class="page-link" to="#">
+                    1
+                  </Link>
+                </li>
+                <li class="page-item">
+                  <Link class="page-link" to="#">
+                    2
+                  </Link>
+                </li>
+                <li class="page-item">
+                  <Link class="page-link" to="#">
+                    3
+                  </Link>
+                </li>
+                <li class="page-item">
+                  <Link class="page-link" to="#">
+                    Next
+                  </Link>
+                </li>
+              </ul>
+            </nav>
+          </div>
         </div>
       </div>
     );

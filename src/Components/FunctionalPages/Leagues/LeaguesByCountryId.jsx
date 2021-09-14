@@ -8,6 +8,7 @@ class LeaguesByCountryId extends Component {
     super(props);   
     this.state = {
       leaguesListByCountryId: [],
+      pagination: {},
       countryId: this.props.match.params,
     };
   }
@@ -19,7 +20,8 @@ class LeaguesByCountryId extends Component {
   getLeaguesInfoByCountryId = (id) => {
     getLeaguesByCountryId(this.state.countryId.id).then((response) => {
       this.setState({
-        leaguesListByCountryId: response,
+        leaguesListByCountryId: response.data,
+        pagination: response.pagination,
       });
     });
   };
