@@ -116,6 +116,17 @@ class TeamsPlayingInASeasonBySeasonId extends Component {
             <>
               <div className="col-3">
                 <div className="card h-90 my-3">
+                  <div className="card-body">
+                    <Link
+                      class="fw-bold fs-4 text-dark"
+                      to={PAGE_URLS.GET_TEAM_BY_TEAM_ID.replace(
+                        ":id",
+                        tpiasList.id
+                      )}
+                    >
+                      Team Info
+                    </Link>
+                  </div>  
                   <img
                     src={tpiasList.badgeurl}
                     className="card-img-top"

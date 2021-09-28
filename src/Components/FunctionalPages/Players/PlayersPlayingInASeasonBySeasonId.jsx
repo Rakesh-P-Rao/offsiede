@@ -115,6 +115,17 @@ class PlayersPlayingInASeasonBySeasonId extends Component {
           {this.state.playersPlayingInASeasonListBySeasonId.map((ppiasList) => (
             <>
               <div className="col-3">
+                <div className="card-body">
+                  <Link
+                    class="nav-link"
+                    to={PAGE_URLS.GET_PLAYER_BY_PLAYER_ID.replace(
+                      ":id",
+                      ppiasList.id
+                    )}
+                  >
+                    More Info
+                  </Link>
+                </div>
                 <div className="card h-90 my-3">
                   <img
                     src={ppiasList.photoURL}

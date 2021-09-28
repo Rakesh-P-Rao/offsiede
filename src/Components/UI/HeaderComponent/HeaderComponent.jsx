@@ -49,21 +49,21 @@ class HeaderComponent extends Component {
                 </Link>
               </li>
               <li className="nav-item pt-2">
-                <Link className="nav-link text-light" to={PAGE_URLS.HOME}>
+                <Link className="nav-link text-light" to={PAGE_URLS.GET_ALL_FIXTURES}>
                   Fixtures
                 </Link>
               </li>
               <li className="nav-item pt-2">
                 <Link
                   className="nav-link text-light"
-                  to={PAGE_URLS.GET_ALL_COUNTRIES}
+                  to={PAGE_URLS.GET_ALL_LEAGUES}
                 >
                   Leagues
                 </Link>
               </li>
               <li className="nav-item pt-2">
-                <Link className="nav-link text-light" to={PAGE_URLS.HOME}>
-                  Teams
+                <Link className="nav-link text-light" to={PAGE_URLS.GET_ALL_SEASONS}>
+                  Seasons
                 </Link>
               </li>
               <li className="nav-item pt-2 dropdown">
@@ -84,23 +84,23 @@ class HeaderComponent extends Component {
                   <li>
                     <Link
                       className="dropdown-item bg-dark text-light"
-                      to={PAGE_URLS.HOME}
+                      to={PAGE_URLS.GET_ALL_IN_PLAY}
                     >
-                      Weather
+                      In Play
                     </Link>
                   </li>
                   <li>
                     <Link
                       className="dropdown-item bg-dark text-light"
-                      to={PAGE_URLS.HOME}
+                      to={PAGE_URLS.GET_ALL_UPCOMING}
                     >
-                      Venues
+                      Upcoming
                     </Link>
                   </li>
                   <li>
                     <Link
                       className="dropdown-item bg-dark text-light"
-                      to={PAGE_URLS.GET_ALL_COUNTRIES_LP}
+                      to={PAGE_URLS.GET_ALL_COUNTRIES}
                     >
                       Countries
                     </Link>

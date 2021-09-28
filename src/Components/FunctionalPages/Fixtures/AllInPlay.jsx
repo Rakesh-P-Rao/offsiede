@@ -34,12 +34,6 @@ class AllInPlay extends Component {
             <>
               <div className="col-3">
                 <div className="card h-90 my-3">
-                  <img
-                    src={aipList.flag}
-                    className="card-img-top"
-                    alt="player dp"
-                  />
-                  <div class="card-body"></div>
                   <ul class="list-group list-group-flush">
                     <li class="list-group-item">{aipList.id}</li>
                     <li class="list-group-item">{aipList.idCountry}</li>
@@ -101,7 +95,29 @@ class AllInPlay extends Component {
                       className="text-dark fs-4 fw-bold"
                       to={PAGE_URLS.HOME}
                     >
-                      {aipList.leagueName}
+                      Home
+                    </Link>
+                  </div>
+                  <div class="card-body">
+                    <Link
+                      className="text-dark fs-4 fw-bold"
+                      to={PAGE_URLS.GET_STAGE_BY_STAGE_ID.replace(
+                        ":id",
+                        aipList.idStage
+                      )}
+                    >
+                      Stage info
+                    </Link>
+                  </div>
+                  <div class="card-body">
+                    <Link
+                      className="text-dark fs-4 fw-bold"
+                      to={PAGE_URLS.GET_VENUE_BY_VENUE_ID.replace(
+                        ":id",
+                        aipList.idVenue
+                      )}
+                    >
+                      Venue info
                     </Link>
                   </div>
                 </div>

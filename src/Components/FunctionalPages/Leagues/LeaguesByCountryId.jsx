@@ -77,6 +77,28 @@ class LeaguesByCountryId extends Component {
                   <div class="card-body">
                     <Link
                       className="text-dark fs-4 fw-bold"
+                      to={PAGE_URLS.GET_SEASON_BY_LEAGUE_ID.replace(
+                        ":id",
+                        lList.id
+                      )}
+                    >
+                      Season info
+                    </Link>
+                  </div>
+                  <div class="card-body">
+                    <Link
+                      className="text-dark fs-4 fw-bold"
+                      to={PAGE_URLS.GET_LEAGUE_BY_LEAGUE_ID.replace(
+                        ":id",
+                        lList.id
+                      )}
+                    >
+                      League info
+                    </Link>
+                  </div>
+                  <div class="card-body">
+                    <Link
+                      className="text-dark fs-4 fw-bold"
                       to={PAGE_URLS.HOME}
                     >
                       Home

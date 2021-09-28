@@ -89,6 +89,17 @@ class StatsByFixtureId extends Component {
                       Home
                     </Link>
                   </div>
+                  <div class="card-body">
+                    <Link
+                      className="text-dark fs-4 fw-bold"
+                      to={PAGE_URLS.GET_FIXTURE_BY_FIXTURE_ID.replace(
+                        ":id",
+                        sList.idFixture
+                      )}
+                    >
+                      Fixture Info
+                    </Link>
+                  </div>
                 </div>
               </div>
             </>

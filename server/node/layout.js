@@ -26,6 +26,13 @@ const AllFiles = {
   getStatsByFixtureId: require("./codes/Fixtures/fixture"),
   getLineupsByFixtureId: require("./codes/Fixtures/fixture"),
   getCountryByCountryName: require("./codes/Countries/country"),
+  getStandingsByStageId: require("./codes/Stages/stage"),
+  getPlayerByPlayerId: require("./codes/Players/player"),
+  getTeamByTeamId: require("./codes/Teams/team"),
+  getFixtureByFixtureId: require("./codes/Fixtures/fixture"),
+  getStageByStageId: require("./codes/Stages/stage"),
+  getVenueByVenueId: require("./codes/Venues/venue"),
+  getFeed: require("./codes/Feed/feed"),
 };
 
 module.exports = AllFiles;

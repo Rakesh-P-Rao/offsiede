@@ -40,7 +40,7 @@ class EventsByFixtureId extends Component {
                   this.state.fixtureId.id
                 )}
               >
-               Events Info
+                Events Info
               </Link>
             </li>
             <li class="nav-item">
@@ -51,7 +51,7 @@ class EventsByFixtureId extends Component {
                   this.state.fixtureId.id
                 )}
               >
-               Stats Info
+                Stats Info
               </Link>
             </li>
             <li class="nav-item">
@@ -92,6 +92,17 @@ class EventsByFixtureId extends Component {
                       to={PAGE_URLS.HOME}
                     >
                       Home
+                    </Link>
+                  </div>
+                  <div class="card-body">
+                    <Link
+                      className="text-dark fs-4 fw-bold"
+                      to={PAGE_URLS.GET_FIXTURE_BY_FIXTURE_ID.replace(
+                        ":id",
+                        eList.idFixture
+                      )}
+                    >
+                      Fixture Info
                     </Link>
                   </div>
                 </div>

@@ -3,19 +3,16 @@ const app = express();
 var axios = require("axios").default;
 
 require("dotenv").config();
-let AUTHORIZATION = process.env.AUTHORIZATION;
+let RAPID_API_KEY_FEED = process.env.RAPID_API_KEY_FEED;
 
-const teams = {
-  getTeamByTeamId: app.get("/get-team-by-team-id/:id", (req, res) => {
-    const id = req.params.id;
+const feed = {
+  getAllFeedList: app.get("/get-feed", (req, res) => {
     var options = {
       method: "GET",
-      url: `https://football.elenasport.io/v2/teams/${id}`,
-      qs: {
-        expand: "***expand***",
-      },
+      url: "https://free-football-soccer-videos.p.rapidapi.com/",
       headers: {
-        Authorization: AUTHORIZATION,
+        "x-rapidapi-host": "free-football-soccer-videos.p.rapidapi.com",
+        "x-rapidapi-key": RAPID_API_KEY_FEED,
       },
     };
 
@@ -31,4 +28,4 @@ const teams = {
   }),
 };
 
-module.exports = teams;
+module.exports = feed;

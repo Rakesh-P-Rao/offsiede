@@ -1,25 +1,26 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { PAGE_URLS } from "../../../Utils/Constants";
-import { getAllFixturesList } from "./../FunctionalApiActions/Fixtures/faaFixtures";
+import { getFixtureByFixtureId } from "./../FunctionalApiActions/Fixtures/faaFixtures";
 
-class AllFixtures extends Component {
+class FixtureByFixtureId extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      allFixtureList: [],
+      fixtureList: [],
       pagination: {},
+      fixtureId: this.props.match.params,
     };
   }
 
   componentDidMount() {
-    this.getAllListOfFixtures();
+    this.getListOfFixtures();
   }
 
-  getAllListOfFixtures = () => {
-    getAllFixturesList().then((response) => {
+  getListOfFixtures = (id) => {
+    getFixtureByFixtureId(this.state.fixtureId.id).then((response) => {
       this.setState({
-        allFixtureList: response.data,
+        fixtureList: response.data,
         pagination: response.pagination,
       });
     });
@@ -28,9 +29,9 @@ class AllFixtures extends Component {
   render() {
     return (
       <div className="container">
-        <h1 className="card-footer">All Fixtures</h1>
+        <h1 className="card-footer">Fixtures Info</h1>
         <div className="row">
-          {this.state.allFixtureList.map((fList) => (
+          {this.state.fixtureList.map((fList) => (
             <>
               <div className="col-3">
                 <div className="card h-90 my-3">
@@ -89,40 +90,7 @@ class AllFixtures extends Component {
                       className="text-dark fs-4 fw-bold"
                       to={PAGE_URLS.HOME}
                     >
-                      Home
-                    </Link>
-                  </div>
-                  <div class="card-body">
-                    <Link
-                      className="text-dark fs-4 fw-bold"
-                      to={PAGE_URLS.GET_STAGE_BY_STAGE_ID.replace(
-                        ":id",
-                        fList.idStage
-                      )}
-                    >
-                      Stage info
-                    </Link>
-                  </div>
-                  <div class="card-body">
-                    <Link
-                      className="text-dark fs-4 fw-bold"
-                      to={PAGE_URLS.GET_VENUE_BY_VENUE_ID.replace(
-                        ":id",
-                        fList.idVenue
-                      )}
-                    >
-                      Venue info
-                    </Link>
-                  </div>
-                  <div class="card-body">
-                    <Link
-                      className="text-dark fs-4 fw-bold"
-                      to={PAGE_URLS.GET_EVENTS_BY_FIXTURE_ID.replace(
-                        ":id",
-                        fList.id
-                      )}
-                    >
-                      More info
+                      {fList.id}
                     </Link>
                   </div>
                 </div>
@@ -135,4 +103,4 @@ class AllFixtures extends Component {
   }
 }
 
-export default AllFixtures;
+export default FixtureByFixtureId;

@@ -84,11 +84,12 @@ const countries = {
   ),
 
   getCountryByCountryName: app.get("/get-country-by-name/:name", (req, res) => {
-    const name = req.params.name;
+    const name = req.body.name;
+    console.log(name);
     var options = {
       method: "GET",
       url: `https://football.elenasport.io/v2/countries?name=${name}`,
-      qs: {
+      qs: { 
         expand: "***expand***",
         name: "***name***",
         page: "***page***",

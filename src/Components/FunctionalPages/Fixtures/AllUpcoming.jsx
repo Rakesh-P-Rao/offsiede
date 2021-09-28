@@ -98,7 +98,29 @@ class AllUpcoming extends Component {
                         className="text-dark fs-4 fw-bold"
                         to={PAGE_URLS.HOME}
                       >
-                        {auList.leagueName}
+                        Home
+                      </Link>
+                    </div>
+                    <div class="card-body">
+                      <Link
+                        className="text-dark fs-4 fw-bold"
+                        to={PAGE_URLS.GET_STAGE_BY_STAGE_ID.replace(
+                          ":id",
+                          auList.idStage
+                        )}
+                      >
+                        Stage info
+                      </Link>
+                    </div>
+                    <div class="card-body">
+                      <Link
+                        className="text-dark fs-4 fw-bold"
+                        to={PAGE_URLS.GET_VENUE_BY_VENUE_ID.replace(
+                          ":id",
+                          auList.idVenue
+                        )}
+                      >
+                        Venue info
                       </Link>
                     </div>
                   </div>

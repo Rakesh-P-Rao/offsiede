@@ -56,6 +56,44 @@ class CountryByCountryId extends Component {
             </li>
           </ul>
         </div>
+        <>
+          <div className="card border-top-0 mb-3">
+            <div class="row g-0" style={{ height: "270px" }}>
+              <div class="col-4">
+                <img src="flag dp" className="card-img-top" alt="flag dp" />
+              </div>
+              <div class="col-8">
+                <div class="card-body mt-5">
+                  <h1 class="card-title">Name</h1>
+                  <p class="card-text">
+                    <small class="text-muted">alpha3code</small>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="card-body" style={{ height: "240px" }}>
+              <div className="row">
+                <div className="col">
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Capital: </li>
+                    <li class="list-group-item">Region: </li>
+                  </ul>
+                </div>
+                <div className="col">
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item">alpha2code</li>
+                    <li class="list-group-item">Subregion: </li>
+                    <li class="list-group-item">Timezones: </li>
+                  </ul>
+                </div>
+              </div>
+              
+              <Link className="text-dark fs-4 fw-bold btn mb-0" to={PAGE_URLS.HOME}>
+                Home
+              </Link>
+            </div>
+          </div>
+        </>
         <div className="row">
           {this.state.countryByIdList.map((cList) => (
             <>

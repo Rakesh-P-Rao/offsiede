@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import { PAGE_URLS } from '../../../Utils/Constants';
+import Feed from '../Feed/Feed';
+import AllInPlayHomePage from '../Fixtures/AllInPlayHomePage';
 
 class HomePage extends Component {
     constructor(props) {
@@ -11,7 +13,8 @@ class HomePage extends Component {
       return (
         <div className="container">
           <>
-            <h1>Home</h1>
+            <h1 className="card-header">Home</h1>
+            <AllInPlayHomePage />
             <div className="btn btn-info p-3 m-5 text-dark">
               <Link className="text-dark fs-4 fw-bold" to={PAGE_URLS.HOME}>
                 Home
@@ -66,6 +69,15 @@ class HomePage extends Component {
                 All Upcoming
               </Link>
             </div>
+            <div className="btn btn-info p-3 m-5 text-dark">
+              <Link
+                className="text-dark fs-4 fw-bold"
+                to={PAGE_URLS.GET_COUNTRY_BY_COUNTRY_NAME}
+              >
+                Search Country
+              </Link>
+            </div>
+            <Feed />
           </>
         </div>
       );  

@@ -87,3 +87,19 @@ export function getLineupsByFixtureId(id) {
       }
     );
 }
+
+export function getFixtureByFixtureId(id) {
+  return new HttpRequest(
+    `${SERVER_ACTIONS.GET_FIXTURE_BY_FIXTURE_ID}/${id}`,
+    "GET"
+  )
+    .requestWithAuthentication()
+    .then(
+      (response) => {
+        return Promise.resolve(response.data);
+      },
+      (error) => {
+        return Promise.reject(error);
+      }
+    );
+}

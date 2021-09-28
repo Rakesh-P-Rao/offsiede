@@ -116,6 +116,17 @@ class InPlayBySeasonId extends Component {
             <>
               <div className="col-3">
                 <div className="card h-90 my-3">
+                  <div class="card-body">
+                    <Link
+                      className="text-dark fs-4 fw-bold"
+                      to={PAGE_URLS.GET_STANDINGS_BY_STAGE_ID.replace(
+                        ":id",
+                        ipList.idStage
+                      )}
+                    >
+                      Standings
+                    </Link>
+                  </div>
                   <ul class="list-group list-group-flush">
                     <li class="list-group-item">{ipList.id}</li>
                     <li class="list-group-item">{ipList.idCountry}</li>

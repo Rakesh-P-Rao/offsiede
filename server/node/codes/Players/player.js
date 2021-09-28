@@ -5,15 +5,13 @@ var axios = require("axios").default;
 require("dotenv").config();
 let AUTHORIZATION = process.env.AUTHORIZATION;
 
-const teams = {
-  getTeamByTeamId: app.get("/get-team-by-team-id/:id", (req, res) => {
+const players = {
+  getPlayerByPlayerId: app.get("/get-player-by-player-id/:id", (req, res) => {
     const id = req.params.id;
     var options = {
       method: "GET",
-      url: `https://football.elenasport.io/v2/teams/${id}`,
-      qs: {
-        expand: "***expand***",
-      },
+      url: `https://football.elenasport.io/v2/players/${id}`,
+      qs: {},
       headers: {
         Authorization: AUTHORIZATION,
       },
@@ -31,4 +29,4 @@ const teams = {
   }),
 };
 
-module.exports = teams;
+module.exports = players;

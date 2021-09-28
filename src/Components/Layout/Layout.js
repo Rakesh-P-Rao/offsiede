@@ -33,6 +33,13 @@ import EventsByFixtureId from "../FunctionalPages/Fixtures/EventsByFixtureId";
 import StatsByFixtureId from "../FunctionalPages/Fixtures/StatsByFixtureId";
 import LineupsByFixtureId from "../FunctionalPages/Fixtures/LineupsByFixtureId";
 import CountryByCountryName from "../FunctionalPages/Countries/CountryByCountryName";
+import StandingsByStageId from "../FunctionalPages/Standings/StandingsByStageId";
+import PlayerByPlayerId from "../FunctionalPages/Players/PlayerByPlayerId";
+import TeamByTeamId from "../FunctionalPages/Team/TeamByTeamId";
+import FixtureByFixtureId from "../FunctionalPages/Fixtures/FixtureByFixtureId";
+import StageByStageId from "../FunctionalPages/Stages/StageByStageId";
+import VenueByVenueId from "../FunctionalPages/Venues/VenueById";
+import Feed from "../FunctionalPages/Feed/Feed";
 
 class Layout extends Component {
   constructor(props) {
@@ -188,6 +195,41 @@ class Layout extends Component {
               path={PAGE_URLS.GET_COUNTRY_BY_COUNTRY_NAME}
               exact
               component={CountryByCountryName}
+            />
+            <Route
+              path={PAGE_URLS.GET_STANDINGS_BY_STAGE_ID}
+              exact
+              component={StandingsByStageId}
+            />
+            <Route
+              path={PAGE_URLS.GET_PLAYER_BY_PLAYER_ID}
+              exact
+              component={PlayerByPlayerId}
+            />
+            <Route
+              path={PAGE_URLS.GET_TEAM_BY_TEAM_ID}
+              exact
+              component={TeamByTeamId}
+            />
+            <Route
+              path={PAGE_URLS.GET_FIXTURE_BY_FIXTURE_ID}
+              exact
+              component={FixtureByFixtureId}
+            />
+            <Route
+              path={PAGE_URLS.GET_STAGE_BY_STAGE_ID}
+              exact
+              component={StageByStageId}
+            />
+            <Route
+              path={PAGE_URLS.GET_VENUE_BY_VENUE_ID}
+              exact
+              component={VenueByVenueId}
+            />
+            <Route
+              path={PAGE_URLS.GET_FEED}
+              exact
+              component={Feed}
             />
             <Route
               path={PAGE_URLS.PAGE_NOT_FOUND}

@@ -158,6 +158,36 @@ const fixtures = {
         });
     }
   ),
+
+  getFixtureByFixtureId: app.get(
+    "/get-fixture-by-fixture-id/:id",
+    (req, res) => {
+      const id = req.params.id;
+      var options = {
+        method: "GET",
+        url: `https://football.elenasport.io/v2/fixtures/${id}`,
+        qs: {
+          events: "***events***",
+          expand: "***expand***",
+          lineups: "***lineups***",
+          stats: "***stats***",
+        },
+        headers: {
+          Authorization: AUTHORIZATION,
+        },
+      };
+
+      axios
+        .request(options)
+        .then(function (response) {
+          console.log(response.data);
+          res.send(response.data);
+        })
+        .catch(function (error) {
+          console.error(error);
+        });
+    }
+  ),
 };
 
 module.exports = fixtures;

@@ -34,6 +34,13 @@ app.use(
   AllFiles.allFixtures.getStatsByFixtureId,
   AllFiles.allFixtures.getLineupsByFixtureId,
   AllFiles.allCountries.getCountryByCountryName,
+  AllFiles.getStandingsByStageId.getStandingsByStageId,
+  AllFiles.getPlayerByPlayerId.getPlayerByPlayerId,
+  AllFiles.getTeamByTeamId.getTeamByTeamId,
+  AllFiles.allFixtures.getFixtureByFixtureId,
+  AllFiles.getStageByStageId.getStageByStageId,
+  AllFiles.getVenueByVenueId.getVenueByVenueId,
+  AllFiles.getFeed.getAllFeedList,
 );
 
 require("dotenv").config();
