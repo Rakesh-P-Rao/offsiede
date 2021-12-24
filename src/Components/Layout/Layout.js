@@ -39,7 +39,6 @@ import TeamByTeamId from "../FunctionalPages/Team/TeamByTeamId";
 import FixtureByFixtureId from "../FunctionalPages/Fixtures/FixtureByFixtureId";
 import StageByStageId from "../FunctionalPages/Stages/StageByStageId";
 import VenueByVenueId from "../FunctionalPages/Venues/VenueById";
-import Feed from "../FunctionalPages/Feed/Feed";
 
 class Layout extends Component {
   constructor(props) {
@@ -225,11 +224,6 @@ class Layout extends Component {
               path={PAGE_URLS.GET_VENUE_BY_VENUE_ID}
               exact
               component={VenueByVenueId}
-            />
-            <Route
-              path={PAGE_URLS.GET_FEED}
-              exact
-              component={Feed}
             />
             <Route
               path={PAGE_URLS.PAGE_NOT_FOUND}

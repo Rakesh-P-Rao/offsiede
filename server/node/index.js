@@ -40,7 +40,6 @@ app.use(
   AllFiles.allFixtures.getFixtureByFixtureId,
   AllFiles.getStageByStageId.getStageByStageId,
   AllFiles.getVenueByVenueId.getVenueByVenueId,
-  AllFiles.getFeed.getAllFeedList,
 );
 
 require("dotenv").config();

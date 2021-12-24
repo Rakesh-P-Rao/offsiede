@@ -6,13 +6,9 @@ import { getAllCountriesList } from "../FunctionalApiActions/Countries/faaCountr
 class AllCountries extends Component {
   constructor(props) {
     super(props);
-    this.handleHasNextPage = this.handleHasNextPage.bind(this);
-    this.handleHasPrevPage = this.handleHasPrevPage.bind(this);
     this.state = {
       allCountryList: [],
       pagination: {},
-      currentPage: "",
-      page:"",
     };
   }
 
@@ -25,131 +21,83 @@ class AllCountries extends Component {
       this.setState({
         allCountryList: response.data,
         pagination: response.pagination,
-        currentPage: response.pagination.page,
       });
     });
   };
 
-  handleHasPrevPage() {
-    // this.setState({ page: this.state.pagination.page});
-    this.setState({ page: this.state.currentPage - 1 });
-    console.log(this.state.page, "=> this.state.page in hasPrevPage");
-  }
-
-  handleHasNextPage() {
-    // this.setState({ page: this.state.pagination.page});
-    this.setState({ page: this.state.currentPage + 1 });
-    console.log(this.state.page, "=> this.state.page in hasNextPage");
-  }
-
   render() {
-    console.log(this.state.currentPage);
-    console.log(this.state.page);
     return (
       <div className="container">
-        <div
-          className="card-footer fixed-top container"
-          style={{ marginTop: "73px", backgroundColor: "lightgray" }}
+        <h1
+          className="card-footer container fixed-top"
+          style={{ marginTop: "74px", backgroundColor: "whitesmoke" }}
         >
-          <div className="row">
-            <div className="col-1 mt-3">
-              <button
-                type="button"
-                class="btn btn-sm btn-outline-secondary fw-bold"
-                onClick={this.handleHasPrevPage}
-              >
-                Previous
-              </button>
-            </div>
-            <div className="col-10">
-              <h1>All Countries</h1>
-            </div>
-            <div className="col-1 mt-3">
-              <button
-                type="button"
-                class="btn btn-sm btn-outline-secondary fw-bold"
-                onClick={this.handleHasNextPage}
-              >
-                Next
-              </button>
-            </div>
-          </div>
-        </div>
-        <div className="row">
-          <>
-            <div className="col-3" style={{ marginTop: "72px" }}>
-              <div className="card h-90 my-3">
-                <div class="card">
-                  <img src="" className="card-img-top" alt="flag dp" />
-                  <div class="card-body">
-                    <h5 class="card-title">Name</h5>
-                  </div>
-                  <ul class="list-group list-group-flush">
-                    <li class="list-group-item">capital</li>
-                    <li class="list-group-item">
-                      <div className="row">
-                        <div className="col-8">subregion</div>
-                        <div className="col-4">alpha3code</div>
-                      </div>
-                    </li>
-                  </ul>
-                  <div class="card-body">
-                    <Link
-                      className="text-muted fs-4 fw-bold mr-3"
-                      to={PAGE_URLS.HOME}
-                    >
-                      Home
-                    </Link>
-                    <Link
-                      className="text-muted fs-4 fw-bold"
-                      to={PAGE_URLS.GET_COUNTRY_BY_COUNTRY_ID}
-                    >
-                      More info
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </>
+          All Countries
+        </h1>
+        <div className="row" style={{ marginTop: "172px" }}>
           {this.state.allCountryList.map((cList) => (
             <>
-              <div className="col-3" style={{ marginTop: "72px" }}>
+              <div className="col-3">
                 <div className="card h-90 my-3">
                   <img
                     src={cList.flag}
                     className="card-img-top"
                     alt="player dp"
                   />
-                  <div class="card-body"></div>
                   <ul class="list-group list-group-flush">
-                    <li class="list-group-item">{cList.id}</li>
-                    <li class="list-group-item">{cList.name}</li>
-                    <li class="list-group-item">{cList.alpha2code}</li>
-                    <li class="list-group-item">{cList.alpha3code}</li>
-                    <li class="list-group-item">{cList.capital}</li>
-                    <li class="list-group-item">{cList.region}</li>
-                    <li class="list-group-item">{cList.subregion}</li>
-                    <li class="list-group-item">{cList.timezones}</li>
+                    <li
+                      class="list-group-item fs-5 fw-bold"
+                      style={{ maxHeight: "100px" }}
+                    >
+                      <div className="row">
+                        <div className="col-8">{cList.name}</div>
+                        <div className="col-4">{cList.alpha3code}</div>
+                      </div>
+                    </li>
+                    <li className="list-group-item">{cList.capital}</li>
+                    <li class="list-group-item">
+                      <div className="row">
+                        <div className="col-4">
+                          <Link
+                            className="text-dark fs-5 badge"
+                            to={PAGE_URLS.HOME}
+                          >
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="18"
+                              height="18"
+                              fill="currentColor"
+                              class="bi bi-arrow-left-circle-fill"
+                              viewBox="0 0 16 16"
+                            >
+                              <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z" />
+                            </svg>
+                          </Link>
+                        </div>
+                        <div className="col-4"></div>
+                        <div className="col-4">
+                          <Link
+                            className="text-dark fs-5 badge"
+                            to={PAGE_URLS.GET_COUNTRY_BY_COUNTRY_ID.replace(
+                              ":id",
+                              cList.id
+                            )}
+                          >
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="18"
+                              height="18"
+                              fill="currentColor"
+                              class="bi bi-arrow-right-circle-fill"
+                              viewBox="0 0 16 16"
+                            >
+                              <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z" />
+                            </svg>
+                          </Link>
+                        </div>
+                      </div>
+                    </li>
                   </ul>
-                  <div class="card-body">
-                    <Link
-                      className="text-dark fs-4 fw-bold"
-                      to={PAGE_URLS.HOME}
-                    >
-                      Home
-                    </Link>
-                  </div>
-                  <div class="card-body">
-                    <Link
-                      className="text-dark fs-4 fw-bold"
-                      to={PAGE_URLS.GET_COUNTRY_BY_COUNTRY_ID.replace(
-                        ":id",
-                        cList.id
-                      )}
-                    >
-                      More info
-                    </Link>
-                  </div>
                 </div>
               </div>
             </>

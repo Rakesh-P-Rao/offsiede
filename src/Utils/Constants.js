@@ -35,7 +35,6 @@ export const SERVER_ACTIONS = {
   GET_FIXTURE_BY_FIXTURE_ID: "/get-fixture-by-fixture-id",
   GET_STAGE_BY_STAGE_ID: "/get-stage-by-stage-id",
   GET_VENUE_BY_VENUE_ID: "/get-venue-by-venue-id",
-  GET_FEED: "/get-feed",
 };
 
 export const PAGE_URLS = {
@@ -76,6 +75,5 @@ export const PAGE_URLS = {
   GET_FIXTURE_BY_FIXTURE_ID: "/get-fixture-by-fixture-id/:id",
   GET_STAGE_BY_STAGE_ID: "/get-stage-by-stage-id/:id",
   GET_VENUE_BY_VENUE_ID: "/get-venue-by-venue-id/:id",
-  GET_FEED: "/get-feed",
   PAGE_NOT_FOUND: "**",
 };

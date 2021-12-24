@@ -32,7 +32,6 @@ const AllFiles = {
   getFixtureByFixtureId: require("./codes/Fixtures/fixture"),
   getStageByStageId: require("./codes/Stages/stage"),
   getVenueByVenueId: require("./codes/Venues/venue"),
-  getFeed: require("./codes/Feed/feed"),
 };
 
 module.exports = AllFiles;
