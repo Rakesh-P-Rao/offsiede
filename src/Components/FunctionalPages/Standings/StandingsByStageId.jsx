@@ -56,48 +56,127 @@ class StandingsByStageId extends Component {
         <div className="row">
           {this.state.standingsListByStageId.map((stdList) => (
             <>
-              <div className="col-3">
-                <div className="card h-90 my-3">
-                  <ul class="list-group list-group-flush">
-                    <li class="list-group-item">{stdList.idStage}</li>
-                    <li class="list-group-item">{stdList.idTeam}</li>
-                    <li class="list-group-item">{stdList.teamName}</li>
-                    <li class="list-group-item">{stdList.ga}</li>
-                    <li class="list-group-item">{stdList.ga_away}</li>
-                    <li class="list-group-item">{stdList.ga_home}</li>
-                    <li class="list-group-item">{stdList.gf}</li>
-                    <li class="list-group-item">{stdList.gf_away}</li>
-                    <li class="list-group-item">{stdList.gf_home}</li>
-                    <li class="list-group-item">{stdList.gd}</li>
-                    <li class="list-group-item">{stdList.gd_away}</li>
-                    <li class="list-group-item">{stdList.gd_home}</li>
-                    <li class="list-group-item">{stdList.p}</li>
-                    <li class="list-group-item">{stdList.p_away}</li>
-                    <li class="list-group-item">{stdList.p_home}</li>
-                    <li class="list-group-item">{stdList.w}</li>
-                    <li class="list-group-item">{stdList.w_away}</li>
-                    <li class="list-group-item">{stdList.w_home}</li>
-                    <li class="list-group-item">{stdList.d}</li>
-                    <li class="list-group-item">{stdList.d_away}</li>
-                    <li class="list-group-item">{stdList.d_home}</li>
-                    <li class="list-group-item">{stdList.l}</li>
-                    <li class="list-group-item">{stdList.l_away}</li>
-                    <li class="list-group-item">{stdList.l_home}</li>
-                    <li class="list-group-item">{stdList.pts}</li>
-                    <li class="list-group-item">{stdList.pts_away}</li>
-                    <li class="list-group-item">{stdList.pts_home}</li>
-                    <li class="list-group-item">{stdList.pos}</li>
-                    <li class="list-group-item">{stdList.note}</li>
-                  </ul>
-                  <div class="card-body">
-                    <Link
-                      className="text-dark fs-4 fw-bold"
-                      to={PAGE_URLS.HOME}
-                    >
-                      Home
-                    </Link>
-                  </div>
-                </div>
+              <div className="container my-3">
+                <table className="table table-bordered fs-3">
+                  <tr>
+                    <td colSpan={2}>Team: </td>
+                    <td colSpan={4}>{stdList.teamName}</td>
+                  </tr>
+                  <tr>
+                    <td>Ga: </td>
+                    <td>{stdList.ga}</td>
+                    <td>Ga away: </td>
+                    <td>{stdList.ga_away}</td>
+                    <td>Ga home: </td>
+                    <td>{stdList.ga_home}</td>
+                  </tr>
+                  <tr>
+                    <td>Gf: </td>
+                    <td>{stdList.gf}</td>
+                    <td>Gf away: </td>
+                    <td>{stdList.gf_away}</td>
+                    <td>Gf home: </td>
+                    <td>{stdList.gf_home}</td>
+                  </tr>
+                  <tr>
+                    <td>Gd: </td>
+                    <td>{stdList.gd}</td>
+                    <td>Gd away: </td>
+                    <td>{stdList.gd_away}</td>
+                    <td>Gd home: </td>
+                    <td>{stdList.gd_home}</td>
+                  </tr>
+                  <tr>
+                    <td>P: </td>
+                    <td>{stdList.p}</td>
+                    <td>P away: </td>
+                    <td>{stdList.p_away}</td>
+                    <td>P home: </td>
+                    <td>{stdList.p_home}</td>
+                  </tr>
+                  <tr>
+                    <td>W: </td>
+                    <td>{stdList.w}</td>
+                    <td>W away: </td>
+                    <td>{stdList.w_away}</td>
+                    <td>W home: </td>
+                    <td>{stdList.w_home}</td>
+                  </tr>
+                  <tr>
+                    <td>D: </td>
+                    <td>{stdList.d}</td>
+                    <td>D away: </td>
+                    <td>{stdList.d_away}</td>
+                    <td>D home: </td>
+                    <td>{stdList.d_home}</td>
+                  </tr>
+                  <tr>
+                    <td>L: </td>
+                    <td>{stdList.l}</td>
+                    <td>L away: </td>
+                    <td>{stdList.l_away}</td>
+                    <td>L home: </td>
+                    <td>{stdList.l_home}</td>
+                  </tr>
+                  <tr>
+                    <td>Points: </td>
+                    <td>{stdList.pts}</td>
+                    <td>Points away: </td>
+                    <td>{stdList.pts_away}</td>
+                    <td>Points home: </td>
+                    <td>{stdList.pts_home}</td>
+                  </tr>
+                  <tr>
+                    <td colSpan={1}>Position: </td>
+                    <td colSpan={2}>{stdList.pos}</td>
+                    <td colSpan={1}>Note: </td>
+                    <td colSpan={2}>{stdList.note}</td>
+                  </tr>
+                  <tr>
+                    <td colSpan={3}>
+                      <Link
+                        className="text-dark fs-5 badge"
+                        to={PAGE_URLS.GET_STAGE_BY_STAGE_ID.replace(
+                          ":id",
+                          stdList.idStage
+                        )}
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="18"
+                          height="18"
+                          fill="currentColor"
+                          class="bi bi-arrow-right-circle-fill"
+                          viewBox="0 0 16 16"
+                        >
+                          <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z" />
+                        </svg>
+                        &nbsp; Stage Info
+                      </Link>
+                    </td>
+                    <td colSpan={3}>
+                      <Link
+                        className="text-dark fs-5 badge"
+                        to={PAGE_URLS.GET_TEAM_BY_TEAM_ID.replace(
+                          ":id",
+                          stdList.idTeam
+                        )}
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="18"
+                          height="18"
+                          fill="currentColor"
+                          class="bi bi-arrow-right-circle-fill"
+                          viewBox="0 0 16 16"
+                        >
+                          <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z" />
+                        </svg>
+                        &nbsp;Team Info
+                      </Link>
+                    </td>
+                  </tr>
+                </table>
               </div>
             </>
           ))}

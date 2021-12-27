@@ -70,37 +70,84 @@ class StatsByFixtureId extends Component {
         <div className="row">
           {this.state.statsListByFixtureId.map((sList) => (
             <>
-              <div className="col-3">
-                <div className="card h-90 my-3">
-                  <ul class="list-group list-group-flush">
-                    <li class="list-group-item">{sList.id}</li>
-                    <li class="list-group-item">{sList.idFixture}</li>
-                    <li class="list-group-item">{sList.idSeason}</li>
-                    <li class="list-group-item">{sList.idTeam}</li>
-                    <li class="list-group-item">{sList.teamName}</li>
-                    <li class="list-group-item">{sList.label}</li>
-                    <li class="list-group-item">{sList.value}</li>
-                  </ul>
-                  <div class="card-body">
-                    <Link
-                      className="text-dark fs-4 fw-bold"
-                      to={PAGE_URLS.HOME}
-                    >
-                      Home
-                    </Link>
-                  </div>
-                  <div class="card-body">
-                    <Link
-                      className="text-dark fs-4 fw-bold"
-                      to={PAGE_URLS.GET_FIXTURE_BY_FIXTURE_ID.replace(
-                        ":id",
-                        sList.idFixture
-                      )}
-                    >
-                      Fixture Info
-                    </Link>
-                  </div>
-                </div>
+              <div className="container my-3">
+                <table className="table table-bordered fs-3">
+                  <tr>
+                    <td colSpan={2}>Team: </td>
+                    <td colSpan={4}>{sList.teamName}</td>
+                  </tr>
+                  <tr>
+                    <td colSpan={1}>Label: </td>
+                    <td colSpan={2}>{sList.label}</td>
+                    <td colSpan={1}>Value: </td>
+                    <td colSpan={2}>{sList.value}</td>
+                  </tr>
+                  <tr>
+                    <td colSpan={2}>
+                      <Link
+                        className="text-dark fs-5 badge"
+                        to={PAGE_URLS.GET_SEASON_BY_SEASON_ID.replace(
+                          ":id",
+                          sList.idSeason
+                        )}
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="18"
+                          height="18"
+                          fill="currentColor"
+                          class="bi bi-arrow-right-circle-fill"
+                          viewBox="0 0 16 16"
+                        >
+                          <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z" />
+                        </svg>
+                        &nbsp; Season Info
+                      </Link>
+                    </td>
+                    <td colSpan={2}>
+                      <Link
+                        className="text-dark fs-5 badge"
+                        to={PAGE_URLS.GET_TEAM_BY_TEAM_ID.replace(
+                          ":id",
+                          sList.idTeam
+                        )}
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="18"
+                          height="18"
+                          fill="currentColor"
+                          class="bi bi-arrow-right-circle-fill"
+                          viewBox="0 0 16 16"
+                        >
+                          <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z" />
+                        </svg>
+                        &nbsp;Team Info
+                      </Link>
+                    </td>
+                    <td colSpan={2}>
+                      <Link
+                        className="text-dark fs-5 badge"
+                        to={PAGE_URLS.GET_FIXTURE_BY_FIXTURE_ID.replace(
+                          ":id",
+                          sList.idFixture
+                        )}
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="18"
+                          height="18"
+                          fill="currentColor"
+                          class="bi bi-arrow-right-circle-fill"
+                          viewBox="0 0 16 16"
+                        >
+                          <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z" />
+                        </svg>
+                        &nbsp;Fixture Info
+                      </Link>
+                    </td>
+                  </tr>
+                </table>
               </div>
             </>
           ))}

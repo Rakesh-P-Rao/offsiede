@@ -35,24 +35,11 @@ class AllInPlay extends Component {
               <div className="col-3">
                 <div className="card h-90 my-3">
                   <ul class="list-group list-group-flush">
-                    <li class="list-group-item">{aipList.id}</li>
-                    <li class="list-group-item">{aipList.idCountry}</li>
                     <li class="list-group-item">{aipList.countryName}</li>
-                    <li class="list-group-item">{aipList.idLeague}</li>
                     <li class="list-group-item">{aipList.leagueName}</li>
-                    <li class="list-group-item">{aipList.idSeason}</li>
                     <li class="list-group-item">{aipList.seasonName}</li>
-                    <li class="list-group-item">{aipList.idHome}</li>
                     <li class="list-group-item">{aipList.homeName}</li>
-                    <li class="list-group-item">{aipList.idAway}</li>
                     <li class="list-group-item">{aipList.awayName}</li>
-                    <li class="list-group-item">{aipList.idStage}</li>
-                    <li class="list-group-item">{aipList.idVenue}</li>
-                    <li class="list-group-item">{aipList.venueName}</li>
-                    <li class="list-group-item">{aipList.date}</li>
-                    <li class="list-group-item">{aipList.status}</li>
-                    <li class="list-group-item">{aipList.round}</li>
-                    <li class="list-group-item">{aipList.attendance}</li>
                     <li class="list-group-item">
                       {aipList.team_home_90min_goals}
                     </li>
@@ -60,66 +47,98 @@ class AllInPlay extends Component {
                       {aipList.team_away_90min_goals}
                     </li>
                     <li class="list-group-item">
-                      {aipList.team_home_ET_goals}
+                      <div className="row">
+                        <div className="col-8 fw-bold fs-5">Stage Info</div>
+                        <div className="col-4">
+                          <Link
+                            className="text-dark fs-5 badge"
+                            to={PAGE_URLS.GET_STAGE_BY_STAGE_ID.replace(
+                              ":id",
+                              aipList.idStage
+                            )}
+                          >
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="18"
+                              height="18"
+                              fill="currentColor"
+                              class="bi bi-arrow-right-circle-fill"
+                              viewBox="0 0 16 16"
+                            >
+                              <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z" />
+                            </svg>
+                          </Link>
+                        </div>
+                      </div>
                     </li>
                     <li class="list-group-item">
-                      {aipList.team_away_ET_goals}
+                      <div className="row">
+                        <div className="col-8 fw-bold fs-5">Venue Info</div>
+                        <div className="col-4">
+                          <Link
+                            className="text-dark fs-5 badge"
+                            to={PAGE_URLS.GET_VENUE_BY_VENUE_ID.replace(
+                              ":id",
+                              aipList.idVenue
+                            )}
+                          >
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="18"
+                              height="18"
+                              fill="currentColor"
+                              class="bi bi-arrow-right-circle-fill"
+                              viewBox="0 0 16 16"
+                            >
+                              <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z" />
+                            </svg>
+                          </Link>
+                        </div>
+                      </div>
                     </li>
-                    <li class="list-group-item">
-                      {aipList.team_home_PEN_goals}
+                    <li className="list-group-item">
+                      <div className="row">
+                        <div className="col-4">
+                          <Link
+                            className="text-dark fs-5 badge"
+                            to={PAGE_URLS.HOME}
+                          >
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="18"
+                              height="18"
+                              fill="currentColor"
+                              class="bi bi-arrow-left-circle-fill"
+                              viewBox="0 0 16 16"
+                            >
+                              <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z" />
+                            </svg>
+                          </Link>
+                        </div>
+                        <div className="col-4"></div>
+                        <div className="col-4">
+                          <Link
+                            className="text-dark fs-5 badge"
+                            to={PAGE_URLS.GET_ALL_IN_PLAY_BY_SEASON_ID.replace(
+                              ":id",
+                              aipList.idSeason
+                            )}
+                          >
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="18"
+                              height="18"
+                              fill="currentColor"
+                              class="bi bi-arrow-right-circle-fill"
+                              viewBox="0 0 16 16"
+                            >
+                              <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z" />
+                            </svg>
+                          </Link>
+                        </div>
+                      </div>
                     </li>
-                    <li class="list-group-item">
-                      {aipList.team_away_PEN_goals}
-                    </li>
-                    <li class="list-group-item">
-                      {aipList.team_home_1stHalf_goals}
-                    </li>
-                    <li class="list-group-item">
-                      {aipList.team_away_1stHalf_goals}
-                    </li>
-                    <li class="list-group-item">
-                      {aipList.team_home_2ndHalf_goals}
-                    </li>
-                    <li class="list-group-item">
-                      {aipList.team_away_2ndHalf_goals}
-                    </li>
-                    <li class="list-group-item">{aipList.elapsed}</li>
-                    <li class="list-group-item">{aipList.elapsedPlus}</li>
-                    <li class="list-group-item">{aipList.eventsHash}</li>
-                    <li class="list-group-item">{aipList.lineupsHash}</li>
-                    <li class="list-group-item">{aipList.statsHash}</li>
-                    <li class="list-group-item">refree array object is sent</li>
                   </ul>
-                  <div class="card-body">
-                    <Link
-                      className="text-dark fs-4 fw-bold"
-                      to={PAGE_URLS.HOME}
-                    >
-                      Home
-                    </Link>
-                  </div>
-                  <div class="card-body">
-                    <Link
-                      className="text-dark fs-4 fw-bold"
-                      to={PAGE_URLS.GET_STAGE_BY_STAGE_ID.replace(
-                        ":id",
-                        aipList.idStage
-                      )}
-                    >
-                      Stage info
-                    </Link>
-                  </div>
-                  <div class="card-body">
-                    <Link
-                      className="text-dark fs-4 fw-bold"
-                      to={PAGE_URLS.GET_VENUE_BY_VENUE_ID.replace(
-                        ":id",
-                        aipList.idVenue
-                      )}
-                    >
-                      Venue info
-                    </Link>
-                  </div>
                 </div>
               </div>
             </>

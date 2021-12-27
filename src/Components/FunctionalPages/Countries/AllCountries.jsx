@@ -26,6 +26,8 @@ class AllCountries extends Component {
   };
 
   render() {
+    console.log(this.state.pagination);
+    console.log(this.state.pagination && this.state.pagination.page);
     return (
       <div className="container">
         <h1

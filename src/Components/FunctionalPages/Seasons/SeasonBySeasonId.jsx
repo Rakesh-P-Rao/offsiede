@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { PAGE_URLS } from "../../../Utils/Constants";
+import BackButton from "../../UI/Buttons/BackButton";
 import { getSeasonBySeasonId } from "../FunctionalApiActions/Seasons/faaSeasons";
 
 class SeasonBySeasonId extends Component {
@@ -114,24 +115,31 @@ class SeasonBySeasonId extends Component {
         <div className="row">
           {this.state.seasonListBySeasonId.map((sList) => (
             <>
-              <div className="col-3">
-                <div className="card h-90 my-3">
-                  <ul class="list-group list-group-flush">
-                    <li class="list-group-item">{sList.id}</li>
-                    <li class="list-group-item">{sList.idLeague}</li>
-                    <li class="list-group-item">{sList.leagueName}</li>
-                    <li class="list-group-item">{sList.start}</li>
-                    <li class="list-group-item">{sList.end}</li>
-                  </ul>
-                  <div class="card-body">
-                    <Link
-                      className="text-dark fs-4 fw-bold"
-                      to={PAGE_URLS.HOME}
-                    >
-                      Home
-                    </Link>
-                  </div>
-                </div>
+              <div className="container">
+                <table className="table table-bordered my-4">
+                  <tr>
+                    <td>League: </td>
+                    <td>{sList.leagueName}</td>
+                  </tr>
+                  <tr>
+                    <td>Start: </td>
+                    <td>{sList.start}</td>
+                  </tr>
+                  <tr>
+                    <td>End: </td>
+                    <td>{sList.end}</td>
+                  </tr>
+                  <tr>
+                    <td colSpan={2}>
+                      <Link
+                        className="text-dark fs-5 badge"
+                        to={PAGE_URLS.GET_ALL_SEASONS}
+                      >
+                        <BackButton />All Seasons
+                      </Link>
+                    </td>
+                  </tr>
+                </table>
               </div>
             </>
           ))}

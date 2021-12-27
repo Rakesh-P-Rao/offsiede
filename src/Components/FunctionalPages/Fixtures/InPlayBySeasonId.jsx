@@ -114,81 +114,131 @@ class InPlayBySeasonId extends Component {
         <div className="row">
           {this.state.inPlayListBySeasonId.map((ipList) => (
             <>
-              <div className="col-3">
-                <div className="card h-90 my-3">
-                  <div class="card-body">
-                    <Link
-                      className="text-dark fs-4 fw-bold"
-                      to={PAGE_URLS.GET_STANDINGS_BY_STAGE_ID.replace(
-                        ":id",
-                        ipList.idStage
-                      )}
-                    >
-                      Standings
-                    </Link>
-                  </div>
-                  <ul class="list-group list-group-flush">
-                    <li class="list-group-item">{ipList.id}</li>
-                    <li class="list-group-item">{ipList.idCountry}</li>
-                    <li class="list-group-item">{ipList.countryName}</li>
-                    <li class="list-group-item">{ipList.idLeague}</li>
-                    <li class="list-group-item">{ipList.leagueName}</li>
-                    <li class="list-group-item">{ipList.idSeason}</li>
-                    <li class="list-group-item">{ipList.seasonName}</li>
-                    <li class="list-group-item">{ipList.idHome}</li>
-                    <li class="list-group-item">{ipList.homeName}</li>
-                    <li class="list-group-item">{ipList.idAway}</li>
-                    <li class="list-group-item">{ipList.awayName}</li>
-                    <li class="list-group-item">{ipList.idStage}</li>
-                    <li class="list-group-item">{ipList.idVenue}</li>
-                    <li class="list-group-item">{ipList.venueName}</li>
-                    <li class="list-group-item">{ipList.date}</li>
-                    <li class="list-group-item">{ipList.status}</li>
-                    <li class="list-group-item">{ipList.round}</li>
-                    <li class="list-group-item">{ipList.attendance}</li>
-                    <li class="list-group-item">
-                      {ipList.team_home_90min_goals}
-                    </li>
-                    <li class="list-group-item">
-                      {ipList.team_away_90min_goals}
-                    </li>
-                    <li class="list-group-item">{ipList.team_home_ET_goals}</li>
-                    <li class="list-group-item">{ipList.team_away_ET_goals}</li>
-                    <li class="list-group-item">
-                      {ipList.team_home_PEN_goals}
-                    </li>
-                    <li class="list-group-item">
-                      {ipList.team_away_PEN_goals}
-                    </li>
-                    <li class="list-group-item">
-                      {ipList.team_home_1stHalf_goals}
-                    </li>
-                    <li class="list-group-item">
-                      {ipList.team_away_1stHalf_goals}
-                    </li>
-                    <li class="list-group-item">
-                      {ipList.team_home_2ndHalf_goals}
-                    </li>
-                    <li class="list-group-item">
-                      {ipList.team_away_2ndHalf_goals}
-                    </li>
-                    <li class="list-group-item">{ipList.elapsed}</li>
-                    <li class="list-group-item">{ipList.elapsedPlus}</li>
-                    <li class="list-group-item">{ipList.eventsHash}</li>
-                    <li class="list-group-item">{ipList.lineupsHash}</li>
-                    <li class="list-group-item">{ipList.statsHash}</li>
-                    <li class="list-group-item">{ipList.referees}</li>
-                  </ul>
-                  <div class="card-body">
-                    <Link
-                      className="text-dark fs-4 fw-bold"
-                      to={PAGE_URLS.HOME}
-                    >
-                      Home
-                    </Link>
-                  </div>
-                </div>
-              </div>
+              <div className="container my-3">
+                <table className="table table-bordered fs-3">
+                  <tr>
+                    <td colSpan={1}>Season: </td>
+                    <td colSpan={2}>{ipList.seasonName}</td>
+                    <td colSpan={1}>League: </td>
+                    <td colSpan={2}>{ipList.leagueName}</td>
+                  </tr>
+                  <tr>
+                    <td colSpan={1}>Home: </td>
+                    <td colSpan={2}>{ipList.homeName}</td>
+                    <td colSpan={1}>Away: </td>
+                    <td colSpan={2}>{ipList.awayName}</td>
+                  </tr>
+                  <tr>
+                    <td colSpan={1}>Venue: </td>
+                    <td colSpan={2}>{ipList.venueName}</td>
+                    <td colSpan={1}>Date: </td>
+                    <td colSpan={2}>{ipList.date}</td>
+                  </tr>
+                  <tr>
+                    <td>Status: </td>
+                    <td>{ipList.status}</td>
+                    <td>Round: </td>
+                    <td>{ipList.round}</td>
+                    <td>Attendance: </td>
+                    <td>{ipList.attendance}</td>
+                  </tr>
+                  <tr>
+                    <td colSpan={1}>Home goals: </td>
+                    <td colSpan={2}>{ipList.team_home_90min_goals}</td>
+                    <td colSpan={1}>Away goals: </td>
+                    <td colSpan={2}>{ipList.team_away_90min_goals}</td>
+                  </tr>
+                  <tr>
+                    <td colSpan={1}>Home extra time goals: </td>
+                    <td colSpan={2}>{ipList.team_home_ET_goals}</td>
+                    <td colSpan={1}>Away extra time goals: </td>
+                    <td colSpan={2}>{ipList.team_away_ET_goals}</td>
+                  </tr>
+                  <tr>
+                    <td colSpan={1}>Home penalty goals: </td>
+                    <td colSpan={2}>{ipList.team_home_PEN_goals}</td>
+                    <td colSpan={1}>Away penalty goals: </td>
+                    <td colSpan={2}>{ipList.team_away_PEN_goals}</td>
+                  </tr>
+                  <tr>
+                    <td colSpan={1}>Home first half goals: </td>
+                    <td colSpan={2}>{ipList.team_home_1stHalf_goals}</td>
+                    <td colSpan={1}>Away first half goals: </td>
+                    <td colSpan={2}>{ipList.team_away_1stHalf_goals}</td>
+                  </tr>
+                  <tr>
+                    <td colSpan={1}>Home second half goals: </td>
+                    <td colSpan={2}>{ipList.team_away_2ndtHalf_goals}</td>
+                    <td colSpan={1}>Away second half goals: </td>
+                    <td colSpan={2}>{ipList.team_away_2ndHalf_goals}</td>
+                  </tr>
+                  <tr>
+                    <td colSpan={2}>
+                      <Link
+                        className="text-dark fs-5 badge"
+                        to={PAGE_URLS.GET_LEAGUE_BY_LEAGUE_ID.replace(
+                          ":id",
+                          ipList.idLeague
+                        )}
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="18"
+                          height="18"
+                          fill="currentColor"
+                          class="bi bi-arrow-right-circle-fill"
+                          viewBox="0 0 16 16"
+                        >
+                          <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z" />
+                        </svg>
+                        &nbsp; League Info
+                      </Link>
+                    </td>
+                    <td colSpan={2}>
+                      <Link
+                        className="text-dark fs-5 badge"
+                        to={PAGE_URLS.GET_SEASON_BY_SEASON_ID.replace(
+                          ":id",
+                          ipList.idSeason
+                        )}
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="18"
+                          height="18"
+                          fill="currentColor"
+                          class="bi bi-arrow-right-circle-fill"
+                          viewBox="0 0 16 16"
+                        >
+                          <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z" />
+                        </svg>
+                        &nbsp;Season Info
+                      </Link>
+                    </td>
+                    <td colSpan={2}>
+                      <Link
+                        className="text-dark fs-5 badge"
+                        to={PAGE_URLS.GET_STANDINGS_BY_STAGE_ID.replace(
+                          ":id",
+                          ipList.idStage
+                        )}
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="18"
+                          height="18"
+                          fill="currentColor"
+                          class="bi bi-arrow-right-circle-fill"
+                          viewBox="0 0 16 16"
+                        >
+                          <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z" />
+                        </svg>
+                        &nbsp;Standings
+                      </Link>
+                    </td>
+                  </tr>
+                </table>
+              </div>  
             </>
           ))}
         </div>

@@ -24,70 +24,8 @@ class HomePage extends Component {
         <>
           <h1 className="card-header">Home</h1>
           <AllInPlayHomePage />
-          <div className="btn btn-info p-3 m-5 text-dark">
-            <Link className="text-dark fs-4 fw-bold" to={PAGE_URLS.HOME}>
-              Home
-            </Link>
-          </div>
-          <div className="btn btn-info p-3 m-5 text-dark">
-            <Link
-              className="text-dark fs-4 fw-bold"
-              to={PAGE_URLS.GET_ALL_COUNTRIES}
-            >
-              All Countries
-            </Link>
-          </div>
-          <div className="btn btn-info p-3 m-5 text-dark">
-            <Link
-              className="text-dark fs-4 fw-bold"
-              to={PAGE_URLS.GET_ALL_LEAGUES}
-            >
-              All Leagues
-            </Link>
-          </div>
-          <div className="btn btn-info p-3 m-5 text-dark">
-            <Link
-              className="text-dark fs-4 fw-bold"
-              to={PAGE_URLS.GET_ALL_SEASONS}
-            >
-              All Seasons
-            </Link>
-          </div>
-          <div className="btn btn-info p-3 m-5 text-dark">
-            <Link
-              className="text-dark fs-4 fw-bold"
-              to={PAGE_URLS.GET_ALL_FIXTURES}
-            >
-              All Fixtures
-            </Link>
-          </div>
-          <div className="btn btn-info p-3 m-5 text-dark">
-            <Link
-              className="text-dark fs-4 fw-bold"
-              to={PAGE_URLS.GET_ALL_IN_PLAY}
-            >
-              All In Play
-            </Link>
-          </div>
-
-          <div className="btn btn-info p-3 m-5 text-dark">
-            <Link
-              className="text-dark fs-4 fw-bold"
-              to={PAGE_URLS.GET_ALL_UPCOMING}
-            >
-              All Upcoming
-            </Link>
-          </div>
-          <div className="btn btn-info p-3 m-5 text-dark">
-            <Link
-              className="text-dark fs-4 fw-bold"
-              to={PAGE_URLS.GET_COUNTRY_BY_COUNTRY_NAME}
-            >
-              Search Country
-            </Link>
-          </div>
           <div
-            class="card mb-3"
+            class="card my-3"
             style={{ maxWidth: "540px;", maxHeight: "360px" }}
           >
             <div class="row g-0">

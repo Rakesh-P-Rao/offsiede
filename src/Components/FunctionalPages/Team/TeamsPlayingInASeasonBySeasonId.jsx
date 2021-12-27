@@ -114,50 +114,79 @@ class TeamsPlayingInASeasonBySeasonId extends Component {
         <div className="row">
           {this.state.teamsPlayingInASeasonListBySeasonId.map((tpiasList) => (
             <>
-              <div className="col-3">
-                <div className="card h-90 my-3">
-                  <div className="card-body">
-                    <Link
-                      class="fw-bold fs-4 text-dark"
-                      to={PAGE_URLS.GET_TEAM_BY_TEAM_ID.replace(
-                        ":id",
-                        tpiasList.id
-                      )}
-                    >
-                      Team Info
-                    </Link>
-                  </div>  
-                  <img
-                    src={tpiasList.badgeurl}
-                    className="card-img-top"
-                    alt="badge dp"
-                  />
-                  <ul class="list-group list-group-flush">
-                    <li class="list-group-item">{tpiasList.id}</li>
-                    <li class="list-group-item">{tpiasList.name}</li>
-                    <li class="list-group-item">{tpiasList.fullName}</li>
-                    <li class="list-group-item">{tpiasList.country}</li>
-                    <li class="list-group-item">{tpiasList.founded}</li>
-                    <li class="list-group-item">{tpiasList.officialPage}</li>
-                    <li class="list-group-item">{tpiasList.phone}</li>
-                    <li class="list-group-item">{tpiasList.email}</li>
-                    <li class="list-group-item">{tpiasList.address}</li>
-                    <li class="list-group-item">
-                      last five matches form:{tpiasList.form}
-                    </li>
-                    <li class="list-group-item">
-                      {tpiasList.badgeurl}badge url not working{" "}
-                    </li>
-                  </ul>
-                  <div class="card-body">
-                    <Link
-                      className="text-dark fs-4 fw-bold"
-                      to={PAGE_URLS.HOME}
-                    >
-                      Home
-                    </Link>
-                  </div>
-                </div>
+              <div className="container my-3">
+                <table className="table table-bordered fs-3">
+                  <tr>
+                    <td colSpan={6}>
+                      <img src={tpiasList.badgeurl} alt="badge url" />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td colSpan={1}>Team: </td>
+                    <td colSpan={2}>{tpiasList.name}</td>
+                    <td colSpan={1}>Full Name: </td>
+                    <td colSpan={2}>{tpiasList.fullName}</td>
+                  </tr>
+                  <tr>
+                    <td colSpan={1}>Country: </td>
+                    <td colSpan={2}>{tpiasList.country}</td>
+                    <td colSpan={1}>Founded: </td>
+                    <td colSpan={2}>{tpiasList.founded}</td>
+                  </tr>
+                  <tr>
+                    <td colSpan={1}>Official Page: </td>
+                    <td colSpan={2}>{tpiasList.officialPage}</td>
+                    <td colSpan={1}>Phone: </td>
+                    <td colSpan={2}>{tpiasList.phone}</td>
+                  </tr>
+                  <tr>
+                    <td colSpan={1}>Email: </td>
+                    <td colSpan={2}>{tpiasList.email}</td>
+                    <td colSpan={1}>Address: </td>
+                    <td colSpan={2}>{tpiasList.address}</td>
+                  </tr>
+                  <tr>
+                    <td colSpan={3}>
+                      <Link
+                        className="text-dark fs-5 badge"
+                        to={PAGE_URLS.GET_ALL_FIXTURES}
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="18"
+                          height="18"
+                          fill="currentColor"
+                          class="bi bi-arrow-left-circle-fill"
+                          viewBox="0 0 16 16"
+                        >
+                          <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z" />
+                        </svg>
+                        &nbsp;All Fixtures
+                      </Link>
+                    </td>
+                    <td colSpan={3}>
+                      <Link
+                        className="text-dark fs-5 badge"
+                        to={PAGE_URLS.GET_TEAM_BY_TEAM_ID.replace(
+                          ":id",
+                          tpiasList.id
+                        )}
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="18"
+                          height="18"
+                          fill="currentColor"
+                          class="bi bi-arrow-right-circle-fill"
+                          viewBox="0 0 16 16"
+                        >
+                          <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z" />
+                        </svg>  
+                        &nbsp;Team Info
+                      </Link>
+                    </td>
+                  </tr>
+                </table>
               </div>
             </>
           ))}

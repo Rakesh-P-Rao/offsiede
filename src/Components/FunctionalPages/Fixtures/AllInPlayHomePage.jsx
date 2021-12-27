@@ -34,9 +34,9 @@ class AllInPlayHomePage extends Component {
               <div className="col-4">
                 <div className="card my-3" style={{ height: "260px" }}>
                   <div className="card-body pb-1">
-                    <div className="row ">
+                    <div className="row">
                       <div className="col">
-                        <h5 class="card-subtitle  mb-3 text-muted">
+                        <h5 class="card-subtitle mb-3 text-muted">
                           {aipList.leagueName}
                         </h5>
                       </div>
@@ -62,17 +62,15 @@ class AllInPlayHomePage extends Component {
                       </div>
                     </div>
                   </div>
-                  <div class="card-footer ">
-                    <Link
-                      to={PAGE_URLS.GET_ALL_IN_PLAY_BY_SEASON_ID.replace(
-                        ":id",
-                        aipList.idSeason
-                      )}
-                      className="text-dark btn"
-                    >
-                      More Info
-                    </Link>
-                  </div>
+                  <Link
+                    to={PAGE_URLS.GET_ALL_IN_PLAY_BY_SEASON_ID.replace(
+                      ":id",
+                      aipList.idSeason
+                    )}
+                    className="btn btn-dark text-light"
+                  >
+                    <div class="card-footer ">More Info</div>
+                  </Link>
                 </div>
               </div>
             </>

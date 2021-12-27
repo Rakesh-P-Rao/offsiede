@@ -88,7 +88,7 @@ class LineupsByFixtureId extends Component {
                   <td className="pt-4">Player</td>
                   <td className="pt-4">Player</td>
                   <td className="pt-4">Player</td>
-                </tr> 
+                </tr>
                 <tr>
                   <td className="pt-5">Player</td>
                   <td className="pt-5">Player</td>
@@ -140,55 +140,86 @@ class LineupsByFixtureId extends Component {
         <div className="row">
           {this.state.lineupsListByFixtureId.map((luList) => (
             <>
-              <div className="col-3">
-                <div className="card h-90 my-3">
-                  <ul class="list-group list-group-flush">
-                    <li class="list-group-item">{luList.id}</li>
-                    <li class="list-group-item">{luList.idFixture}</li>
-                    <li class="list-group-item">{luList.idSeason}</li>
-                    <li class="list-group-item">{luList.idTeam}</li>
-                    <li class="list-group-item">{luList.teamName}</li>
-                    <li class="list-group-item">{luList.idPlayer}</li>
-                    <li class="list-group-item">{luList.playerName}</li>
-                    <li class="list-group-item">{luList.row} row is here</li>
-                    <li class="list-group-item">{luList.col} col is here</li>
-                    <li class="list-group-item">{luList.position}</li>
-                    <li class="list-group-item">{luList.shirtNumber}</li>
-                    <li class="list-group-item">
-                      {luList.isStartingXI} is in starting 11 is here
-                    </li>
-                  </ul>
-                  <div class="card-body">
-                    <Link
-                      className="text-dark fs-4 fw-bold"
-                      to={PAGE_URLS.HOME}
-                    >
-                      Home
-                    </Link>
-                  </div>
-                  <div class="card-body">
-                    <Link
-                      className="text-dark fs-4 fw-bold"
-                      to={PAGE_URLS.GET_FIXTURE_BY_FIXTURE_ID.replace(
-                        ":id",
-                        luList.idFixture
-                      )}
-                    >
-                      Fixture Info
-                    </Link>
-                  </div>
-                  <div class="card-body">
-                    <Link
-                      className="text-dark fs-4 fw-bold"
-                      to={PAGE_URLS.GET_PLAYER_BY_PLAYER_ID.replace(
-                        ":id",
-                        luList.idPlayer
-                      )}
-                    >
-                      Player Info
-                    </Link>
-                  </div>
-                </div>
+              <div className="container my-3">
+                <table className="table table-bordered fs-3">
+                  <tr>
+                    <td colSpan={1}>Team: </td>
+                    <td colSpan={2}>{luList.teamName}</td>
+                    <td colSpan={1}>Player: </td>
+                    <td colSpan={2}>{luList.playerName}</td>
+                  </tr>
+                  <tr>
+                    <td colSpan={1}>Position: </td>
+                    <td colSpan={2}>{luList.position}</td>
+                    <td colSpan={1}>Shirt number: </td>
+                    <td colSpan={2}>{luList.shirtNumber}</td>
+                  </tr>
+                  <tr>
+                    <td colSpan={2}>
+                      <Link
+                        className="text-dark fs-5 badge"
+                        to={PAGE_URLS.GET_PLAYER_BY_PLAYER_ID.replace(
+                          ":id",
+                          luList.idPlayer
+                        )}
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="18"
+                          height="18"
+                          fill="currentColor"
+                          class="bi bi-arrow-right-circle-fill"
+                          viewBox="0 0 16 16"
+                        >
+                          <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z" />
+                        </svg>
+                        &nbsp; Player Info
+                      </Link>
+                    </td>
+                    <td colSpan={2}>
+                      <Link
+                        className="text-dark fs-5 badge"
+                        to={PAGE_URLS.GET_TEAM_BY_TEAM_ID.replace(
+                          ":id",
+                          luList.idTeam
+                        )}
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="18"
+                          height="18"
+                          fill="currentColor"
+                          class="bi bi-arrow-right-circle-fill"
+                          viewBox="0 0 16 16"
+                        >
+                          <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z" />
+                        </svg>
+                        &nbsp;Team Info
+                      </Link>
+                    </td>
+                    <td colSpan={2}>
+                      <Link
+                        className="text-dark fs-5 badge"
+                        to={PAGE_URLS.GET_FIXTURE_BY_FIXTURE_ID.replace(
+                          ":id",
+                          luList.idFixture
+                        )}
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="18"
+                          height="18"
+                          fill="currentColor"
+                          class="bi bi-arrow-right-circle-fill"
+                          viewBox="0 0 16 16"
+                        >
+                          <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z" />
+                        </svg>
+                        &nbsp;Fixture Info
+                      </Link>
+                    </td>
+                  </tr>
+                </table>
               </div>
             </>
           ))}
